@@ -307,6 +307,11 @@ ul {
     flex-direction: row;
 }
 
+.properties .property.middle {
+    display: flex;
+    align-items: center;
+}
+
 .properties .property {
     font-weight: bold;
     min-width: 195px;
