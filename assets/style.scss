@@ -273,6 +273,7 @@ ul {
 .tags dd {
     display: flex;
     gap: 1px 5px;
+    flex-wrap: wrap;
 }
 
 .tag {
@@ -314,6 +315,11 @@ ul {
 .properties .row {
     display: flex;
     flex-direction: row;
+}
+
+.properties .middle {
+    display: flex;
+    align-items: center;
 }
 
 .properties .property {
