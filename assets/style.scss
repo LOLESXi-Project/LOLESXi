@@ -1,0 +1,341 @@
+---
+---
+
+$accent: #096280;
+$lighter: #cdf0fc;
+$hover: #096280;
+
+// layout
+
+$column-width: 900px;
+$grace-space: 200px;
+$layout-break: "(min-width: #{$column-width + $grace-space})";
+
+@media #{$layout-break} {
+    body {
+        width: $column-width;
+        margin: 40px auto;
+    }
+
+    p {
+        text-align: justify;
+    }
+}
+
+@media not all and #{$layout-break} {
+    .github-corner {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .header-box {
+        flex-direction: column;
+    }
+
+    #bin-table th:nth-child(3), #bin-table td:nth-child(3),
+    #bin-table th:nth-child(4), #bin-table td:nth-child(4){
+        display:none;
+    }
+
+    .tag .tag-tooltip {
+        width: max-content;
+        max-width: 60vw !important;
+        transform: translate(-60%, calc(-100% - 2em));
+    }
+}
+
+// common tags
+
+body {
+    font-family: sans, sans-serif;
+    word-break: break-word;
+}
+
+code {
+    padding: 0.15em 0.25em;
+    border-radius: 0.25em;
+    color: $accent;
+    background: $lighter;
+}
+
+pre {
+    background: $lighter;
+    padding: 1em;
+    overflow-x: auto;
+
+    code {
+        padding: 0;
+        border-radius: 0;
+    }
+}
+
+a:link, a:visited {
+    color: $accent;
+}
+
+a:hover {
+    color: $hover;
+}
+
+// permalink on headings
+
+h2, h3, h4, h5, h5 {
+    .permalink {
+        margin-left: 5px;
+        text-decoration: none;
+        visibility: hidden;
+
+        &::before {
+            content: "#";
+        }
+    }
+
+    &:target {
+        border-left: 5px solid $accent;
+        padding-left: 5px;
+    }
+
+    &:hover {
+        .permalink {
+            visibility: visible;
+        }
+    }
+}
+
+// binary list and search
+
+#bin-search {
+    margin-top: 1em;
+    padding: 0.5em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#bin-table {
+    width: 100%;
+
+    th, td {
+        padding: 0.1em 0.5em;
+        overflow-wrap: anywhere;
+    }
+
+    th {
+        text-align: left;
+    }
+
+    tbody tr:hover {
+        background: $lighter;
+    }
+
+    #search-message {
+        display: none;
+        text-align: center;
+        padding: 1em;
+    }
+}
+
+// function description
+
+.function-list {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    gap: 1px 3px;
+    div {
+        flex-basis: 1;
+        display: inline-block;
+        padding: 0.25em 0.5em;
+        border: 1px solid $accent;
+
+        a:link, a:visited {
+            color: $accent;
+            text-decoration: none;
+        }
+
+        &:hover, a:hover {
+            color: $hover;
+            border-color: $hover;
+        }
+    }
+}
+
+.attack-technique-list {
+    font-size: x-small;
+}
+
+// bin examples
+
+.examples {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    counter-reset: item;
+    margin: 0;
+    padding: 0;
+
+    li {
+        display: table-row;
+
+        &:not(:only-child):before {
+            display: table-cell;
+            font-size: 0.8rem;
+            font-weight: bold;
+            width: 3em;
+            text-align: center;
+            //counter-increment: item;
+            //content: "(" counter(item, lower-alpha) ")";
+        }
+    }
+}
+
+// other classes
+
+.logo {
+    $margin: 20px;
+    float: right;
+    width: 100px;
+    height: 100px;
+    margin-left: $margin;
+    margin-bottom: $margin;
+}
+
+.bin-name {
+    font-family: Consolas, monospace;
+    font-size: 1.2rem;
+}
+
+.function-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.attack-technique-id {
+    font-weight: bold;
+}
+
+.github-buttons {
+    display: inline-block;
+    margin-left: 10px;
+
+    // avoid displaying the link text during loading
+    a.github-button {
+        visibility: hidden;
+    }
+}
+
+.header-box {
+    display: flex;
+}
+
+ul {
+    margin: 0;
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.external-favicon {
+    width: 16px;
+    vertical-align: middle;
+}
+
+#contributors {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    align-content: stretch;
+    justify-content: flex-start;
+    gap: 1px 5px;
+    min-height: 50px;
+}
+
+#contributors>div {
+    padding: 3px;
+    border: 1px solid $accent;
+    border-radius: 2px;
+}
+
+.tags {
+    display: flex;
+    align-items: center;
+}
+
+.tags dd {
+    display: flex;
+    gap: 1px 5px;
+}
+
+.tag {
+    background-color: $accent;
+    color: white;
+    padding: 5px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.tag .tag-tooltip {
+    cursor: text;
+    display: none;
+    position: absolute;
+    top: 1.9em;
+    left: 0;
+    z-index: 99999;
+    border: 2px solid $accent;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    padding: 3px;
+    width: max-content;
+    max-width: 500px;
+}
+
+.tag:hover .tag-tooltip,
+.tag-tooltip:hover {
+    display: inline-table;
+}
+
+
+.properties {
+    display: flex;
+    flex-direction: column;
+}
+
+.properties .row {
+    display: flex;
+    flex-direction: row;
+}
+
+.properties .property {
+    font-weight: bold;
+    min-width: 195px;
+    box-sizing: border-box
+}
+
+.properties .property::after {
+    content: ':\00a0';
+}
+
+ol+h2.function-name {
+    margin-top: 3em;
+}
+
+ol {
+    padding: 0;
+}
+
+ol li+li {
+    margin-top: 3em;
+}
+
+ol li:only-child {
+    list-style: none
+}
+
+dl.row>dd {
+    margin: 0;
+}
+
+dl { /* Required for Chrome, default in Firefox */
+    margin: 0;
+}

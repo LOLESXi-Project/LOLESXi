@@ -1,0 +1,106 @@
+---
+layout: common
+---
+
+{% include page_title.html title=page.Name %}
+{% include function_list.html bin=page %}
+
+{{ page.Description | markdownify }}
+
+
+<script src="{{ '/assets/url_helper.js' | relative_url }}"></script>
+<br>
+<div><b>Paths:</b>
+	<ul style="list-style-type:none">
+	{% for ent in page.Full_Path %}
+	<li>{{ent.Path}}</li>
+	{% endfor %}
+	</ul>
+</div>
+{% assign resources = page.Resources %}
+{% if resources and resources.size > 0 %}
+<br>
+<b>Resources:</b>
+<ul>
+	{% for ent in page.Resources %}
+	<li><a href="{{ent.Link}}">{{ent.Link}}</a></li>
+	{% endfor %}
+</ul>
+{% endif %}
+{% assign procedures = page.Procedures %}
+{% if procedures and procedures.size > 0 %}
+<br>
+<b>Procedural Examples:</b>  	<br>
+<ol>
+	{% for ent in page.Procedures %}
+	<li><pre><code>{{ent.Example}}</pre></code></li>
+	{% endfor %}
+</ol>
+{% endif %}
+
+{% assign acknowledgements = page.Acknowledgement %}
+{% if acknowledgements and acknowledgements.size > 0 %}
+<br>
+<div><b>Acknowledgements:</b>
+<ul>
+	{% for pers in page.Acknowledgement %}
+	<li>{{pers.Person}}{% if pers.Handle %} (<a href="https://twitter.com/{{pers.Handle}}">{{pers.Handle}}</a>){% endif %}</li>
+	{% endfor %}
+</ul>
+</div>
+{% endif %}
+{% assign detections = page.Detection %}
+{% if detections and detections.size > 0 %}
+<br>
+<div>
+	<b>Detection:</b>
+	<ul>
+		{% for detection in detections %}{% for entity in detection %}
+			{% if entity[0] != 'IOC' %}
+				{% capture value %}<a href="{{ entity[1] }}" target="_new" data-shorten="true">{{ entity[1] }}</a>{% endcapture %}
+			{% else %}
+				{% assign value = entity[1] | escape %}
+			{% endif %}
+			<li>{{entity[0]}}: {{value}}</li>
+		{% endfor %}{% endfor %}
+	</ul>
+</div>
+{% endif %}
+<br>
+
+{% assign test = page.Commands | group_by:"Category"%}
+{% for Command in test%}
+	{% assign function_name = Command.name | downcase %}
+<h2 id="{{function_name}}" class ="function-name">
+	{{- site.data.functions[function_name].label -}}
+</h2>
+<ol>
+	{% for item in Command.items %}
+	<li>
+		<p>{{item.Description | escape}}</p>
+		<pre><code>{{item.Command | escape_once}}</code></pre>
+		<div class="properties">
+		<dl class="row"><dt class="property">Use case</dt><dd>{{item.Usecase | escape}}</dd></dl>
+		<dl class="row"><dt class="property">Privileges required</dt><dd>{{item.Privileges}}</dd></dl>
+		<dl class="row"><dt class="property">Operating systems</dt><dd>{{item.OperatingSystem}}</dd></dl>
+		{% if item.ProceduralExamples %}
+		<dl class="row">
+			<dt class="property">Additional Procedural Examples</dt>
+			<br>
+			<dd>
+				<ol>
+					{% for example in item.ProceduralExamples %}
+					<ol><pre><code>{{example | escape_once}}</code></pre></ol>
+					{% endfor %}
+				</ol>
+			</dd>
+		</dl>
+		{% endif %}
+		<dl class="row"><dt class="property">ATT&CK&reg; technique</dt><dd><span data-attack-tid="{{item.MitreID}}">{{item.MitreID}}</span></dd></dl><br>
+		{% if item.Tags %}<dl class="tags row"><dt class="property">Tags</dt><dd>{% for tag_items in item.Tags %}{% for tag_item in tag_items %}{%assign key=tag_item[0]%}{%assign value=tag_item[1]%}{%assign tag=key | append:': ' | append:value %}{% assign default_text = 'This function was tagged with "' | append: tag | append:'".' %}<div class="tag">{{tag}}<div class="tag-tooltip">{{site.data.tags[key][value] | default:default_text}}</div></div>{%endfor%}{%endfor%}</dd></dl>{%endif%}
+		</div>
+	</li>
+	{% endfor %}
+</ol>
+{% endfor %}
+

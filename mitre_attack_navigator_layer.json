@@ -1,0 +1,42 @@
+---
+NOTE: "Please use the rendered version of this file"
+---
+{%- assign techniques = '' -%}
+{%- for file in site.lolesxi -%}
+    {% for command in file.Commands -%}
+        {% assign techniques = techniques | append:command.MitreID | append:"|" -%}
+    {% endfor -%}
+{%- endfor -%}
+{%- assign occurrences = techniques | split:'|' | group_by_exp:"item","item" | sort:"items" -%}
+{%- assign subtechniques = occurrences  | where_exp:"item","item.name contains '.'" | group_by_exp:"item","item.name | split:'.' | slice:0" | map:'name' |join:','|split:',' -%}
+{
+    "name": "The LOLESXi Project",
+    "versions": {"attack": "15", "navigator": "4.9.5", "layer": "4.5"},
+    "domain": "enterprise-attack",
+    "description": "ATT&CK alignment of the LOLESXi project, see https://github.com/blueteam0ps/lolESXi/.",
+    "filters": {"platforms": ["Windows"]},
+    "layout": {
+        "layout": "flat",
+        "aggregateFunction": "average",
+        "showID": false,
+        "showName": true,
+        "showAggregateScores": false,
+        "countUnscored": false,
+        "expandedSubtechniques": "none"
+    },
+    "techniques": [
+        {%- assign max_score = 0 -%}
+        {% for occurrence in occurrences %}
+        {"techniqueID": "{{ occurrence.name }}", "score": {{ occurrence.size }}{% if subtechniques contains occurrence.name %}, "showSubtechniques": true{% endif %}}{% unless forloop.last %},{% endunless %}
+            {%- if occurrence.size > max_score %}{% assign max_score = occurrence.size %}{% endif -%}
+        {%- endfor -%}
+    ],
+    "gradient": {
+        "colors": ["#cdf0fc", "#0d89b3"],
+        "minValue": 0,
+        "maxValue": {{max_score}}
+    },
+    "selectTechniquesAcrossTactics": true,
+    "selectSubtechniquesWithParent": false,
+    "selectVisibleTechniques": false
+}

@@ -1,0 +1,1 @@
+{% assign fn_parts = include.path | split: '/' %}{% assign fn_parts_size = fn_parts | size %}{{- fn_parts[1] -}}

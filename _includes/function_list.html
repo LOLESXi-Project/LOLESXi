@@ -1,0 +1,10 @@
+<div class="function-list">
+	{%- assign catergors = include.bin.Commands | group_by:"Category" -%}
+	{%- for cats in catergors -%}
+	{%- assign type = cats.name | downcase -%}
+	{%- assign tag_list = '' | split: ''%}
+	{%- assign tags = cats.items | map:'Tags' -%}{%- for tag_items in tags -%}{%- for tag_item in tag_items -%}{%- for tag in tag_item -%}{% assign tag_list = tag_list | push:tag[1] %}{%-endfor-%}{%-endfor-%}{%-endfor-%}
+	{%- assign tags = tag_list | compact | uniq | join:', ' -%}
+	<div><a href="{{ include.bin.url | relative_url }}#{{ type | url_encode | replace:'+','%20'}}">{{ site.data.functions[type].label }}{% if tags.size>0 %} ({{tags}}){% endif %}</a></div>
+	{%- endfor -%}
+</div>

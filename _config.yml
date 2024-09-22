@@ -1,0 +1,16 @@
+---
+title: LOLESXi
+
+exclude: ['/Gemfile', '/Makefile', '/README.md', '/NOTICE.md', 'LICENSE', '.vscode/']
+
+permalink: pretty
+
+collections:
+  lolesxi:
+    output: true
+
+defaults:
+  - scope:
+      path: '_lolesxi'
+    values:
+      layout: 'bin'

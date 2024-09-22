@@ -1,0 +1,110 @@
+---
+terminate process:
+  label: Terminate Process
+  description: |
+    Termination of a Virtual Machine.
+
+lists vms:
+  label: Lists VMs
+  description: |
+    Lists running Virtual Machines.
+
+terminate vm:
+  label: Terminate Running VM
+  description: |
+    Terminates a Virtual Machine.
+
+system information:
+  label: System Information
+  description: |
+    Displays system information.
+
+account enumeration:
+  label: Account Enumeration
+  description: |
+    Enumerates local user accounts.
+
+find files:
+  label: Find Files
+  description: |
+    Finds files of interest.
+
+remove evidence:
+  label: Remove Evidence
+  description: |
+    Find and Remove Evidence.
+
+find and replace :
+  label: Find and Replace
+  description: |
+    File and Replace files.
+
+change file permission:
+  label: Change File Permission
+  description: |
+    Changes file permission to supplement modifications or execution.
+
+discover storage:
+  label: Discover storage
+  description: |
+    List Volumes and information about storage attached to the ESXi Host.
+
+enable service:
+  label: Enable Service
+  description: |
+    Enables a service on an ESXi Host.
+
+disable startup:
+  label: Disable Startup
+  description: |
+    Disables a service or process from startup.
+
+inhibit recovery:
+  label: Inhibit Recovery
+  description: |
+    Inhibit recovery of an ESXi host by removing or modifying host configuration.
+
+power off vm:
+  label: Power off VM
+  description: |
+    Powers of the Virtual Machine.
+
+stop service:
+  label: Stop Service
+  description: |
+    Stops a service in an ESXi host.
+
+adjust performance:
+  label: Adjust Performance
+  description: |
+    Adjusts Performance Parameters in an ESXi Host.
+
+replace file:
+  label: Replace File
+  description: |
+    Replaces en existing file in an ESXi Host.
+
+timestomp:
+  label: Timestomp
+  description: |
+    Modifies the timestamps of a file to that of a legitimate file of interest.
+
+change display information:
+  label: Change Display Information
+  description: |
+    Modifies display information in consoles.
+
+disable service:
+  label: Disable Service
+  description: |
+    Disables a service until its manually started or via autostart.
+
+discover network info:
+  label: Discover Network Info
+  description: |
+    Obtains information about network configuration.
+
+software operation:
+  label: Software Operation
+  description: |
+    Installs VIB a vSphere Installation Bundle or modifies VIB acceptance levels.
