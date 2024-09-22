@@ -265,6 +265,11 @@ ul {
     border-radius: 2px;
 }
 
+.acknowledgements {
+    column-count: 4;
+    column-gap: 20px;
+}
+
 .tags {
     display: flex;
     align-items: center;

@@ -42,7 +42,7 @@ layout: common
 {% if acknowledgements and acknowledgements.size > 0 %}
 <br>
 <div><b>Acknowledgements:</b>
-<ul>
+<ul class="acknowledgements">
 	{% for pers in page.Acknowledgement %}
 	<li>{{pers.Person}}{% if pers.Handle %} (<a href="https://twitter.com/{{pers.Handle}}">{{pers.Handle}}</a>){% endif %}</li>
 	{% endfor %}
