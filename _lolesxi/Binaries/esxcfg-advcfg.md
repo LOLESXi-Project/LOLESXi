@@ -11,7 +11,7 @@ Commands:
     Privileges: Administrator
     OperatingSystem: ESXi < 8.0
     Tags:
-     - E-Crime: Qilin
+    - E-Crime: Qilin
   - Command: esxcfg-advcfg -s 20000 /BufferCache/FlushInterval
     Description: Reduces the Buffer Cache Flush interval to increase VM performance over network.
     Usecase: An adversary may adjust flush interval of buffer cache to increase performance of operations conducted over the network.
@@ -19,15 +19,15 @@ Commands:
     Privileges: Administrator
     OperatingSystem: ESXi < 8.0
     Tags:
-     - E-Crime: Qilin
+    - E-Crime: Qilin
 Full_Path:
   - Path: /bin/esxcfg-advcfg
   - Path: /sbin/esxcfg-advcfg
 Resources:
-  - Link: https://www.bleepingcomputer.com/news/security/linux-version-of-qilin-ransomware-focuses-on-vmware-esxi/
-  - Link: https://knowledge.broadcom.com/external/article?legacyId=2052302"
+  - Link: <https://www.bleepingcomputer.com/news/security/linux-version-of-qilin-ransomware-focuses-on-vmware-esxi/>
+  - Link: <https://knowledge.broadcom.com/external/article?legacyId=2052302>"
 Acknowledgement:
   - Person: Lawrence Abrams
   - Person: MalwareHunterTeam
     Handle: '@malwarehunterteam'
- ---
+---

@@ -9,12 +9,11 @@ Commands:
     Usecase: An adversary modifies the resource limit thresholds to unlimited. This allows a single process to utilise all the system resources.
     Category: Adjust Performance
     Privileges: User
-    MitreID:  Not Mapped
     OperatingSystem: ESXi
     Tags:
      - E-Crime: Nevada
 Detection:
-  - Sigma: 
+  - Sigma:
 Resources:
   - Link: https://www.varonis.com/blog/vmware-esxi-in-the-line-of-ransomware-fire
 Acknowledgement:

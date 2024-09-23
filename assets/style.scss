@@ -63,6 +63,7 @@ pre {
     background: $lighter;
     padding: 1em;
     overflow-x: auto;
+    white-space: pre-wrap;
 
     code {
         padding: 0;
@@ -234,6 +235,15 @@ ul {
     padding-left: 0;
 }
 
+.row ul {
+    list-style: none;
+
+}
+
+.row li+li {
+    margin: 0;
+}
+
 .external-favicon {
     width: 16px;
     vertical-align: middle;
@@ -255,6 +265,11 @@ ul {
     border-radius: 2px;
 }
 
+.acknowledgements {
+    column-count: 4;
+    column-gap: 20px;
+}
+
 .tags {
     display: flex;
     align-items: center;
@@ -263,6 +278,7 @@ ul {
 .tags dd {
     display: flex;
     gap: 1px 5px;
+    flex-wrap: wrap;
 }
 
 .tag {
@@ -306,14 +322,21 @@ ul {
     flex-direction: row;
 }
 
+.properties .middle {
+    display: flex;
+    align-items: center;
+}
+
 .properties .property {
     font-weight: bold;
-    min-width: 195px;
-    box-sizing: border-box
+    min-width: 205px;
+    width: 205px;
+    box-sizing: border-box;
 }
 
 .properties .property::after {
     content: ':\00a0';
+    white-space: pre;
 }
 
 ol+h2.function-name {

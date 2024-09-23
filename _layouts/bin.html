@@ -42,7 +42,7 @@ layout: common
 {% if acknowledgements and acknowledgements.size > 0 %}
 <br>
 <div><b>Acknowledgements:</b>
-<ul>
+<ul class="acknowledgements">
 	{% for pers in page.Acknowledgement %}
 	<li>{{pers.Person}}{% if pers.Handle %} (<a href="https://twitter.com/{{pers.Handle}}">{{pers.Handle}}</a>){% endif %}</li>
 	{% endfor %}
@@ -85,22 +85,21 @@ layout: common
 		<dl class="row"><dt class="property">Operating systems</dt><dd>{{item.OperatingSystem}}</dd></dl>
 		{% if item.ProceduralExamples %}
 		<dl class="row">
-			<dt class="property">Additional Procedural Examples</dt>
-			<br>
+			<dt class="middle"><span class="property">Additional Procedural Examples</span></dt>
 			<dd>
-				<ol>
+				<ul>
 					{% for example in item.ProceduralExamples %}
-					<ol><pre><code>{{example | escape_once}}</code></pre></ol>
+					<li><pre><code>{{example | escape_once}}</code></pre></li>
 					{% endfor %}
-				</ol>
+				</ul>
 			</dd>
 		</dl>
 		{% endif %}
-		<dl class="row"><dt class="property">ATT&CK&reg; technique</dt><dd><span data-attack-tid="{{item.MitreID}}">{{item.MitreID}}</span></dd></dl><br>
+
+		{% if item.MitreID %}<dl class="row"><dt class="property">ATT&CK&reg; technique</dt><dd><span data-attack-tid="{{item.MitreID}}">{{item.MitreID}}</span></dd></dl><br>{% endif %}
 		{% if item.Tags %}<dl class="tags row"><dt class="property">Tags</dt><dd>{% for tag_items in item.Tags %}{% for tag_item in tag_items %}{%assign key=tag_item[0]%}{%assign value=tag_item[1]%}{%assign tag=key | append:': ' | append:value %}{% assign default_text = 'This function was tagged with "' | append: tag | append:'".' %}<div class="tag">{{tag}}<div class="tag-tooltip">{{site.data.tags[key][value] | default:default_text}}</div></div>{%endfor%}{%endfor%}</dd></dl>{%endif%}
 		</div>
 	</li>
 	{% endfor %}
 </ol>
 {% endfor %}
-
