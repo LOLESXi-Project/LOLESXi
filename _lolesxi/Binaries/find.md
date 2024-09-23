@@ -45,7 +45,8 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: 
+  - Elastic: https://github.com/elastic/detection-rules/blob/main/rules/linux/defense_evasion_rename_esxi_index_file.toml
+  - Elastic: https://github.com/elastic/detection-rules/blob/main/rules/linux/defense_evasion_rename_esxi_index_file.toml
 Resources:
   - Link: https://www.varonis.com/blog/vmware-esxi-in-the-line-of-ransomware-fire
   - Link: https://www.trellix.com/en-au/blogs/research/ransomhouse-am-see/

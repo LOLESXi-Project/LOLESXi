@@ -22,7 +22,7 @@ Full_Path:
   - Path: /bin/touch
   - Path: /usr/lib/vmware/busybox/bin/busybox touch
 Detection:
-  - Sigma: 
+  - Elastic: https://github.com/elastic/detection-rules/blob/main/rules/linux/defense_evasion_esxi_suspicious_timestomp_touch.toml
 Resources:
   - Link: https://www.reddit.com/r/esxi/comments/10txpje/i_was_attack_by_esxi_ransomware_and_the_attack/
   - Link: https://www.varonis.com/blog/vmware-esxi-in-the-line-of-ransomware-fire
