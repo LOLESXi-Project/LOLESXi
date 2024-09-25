@@ -1,0 +1,18 @@
+<div class="function-list">
+
+    {% assign tags = '' | split: '' %}
+    {%- for command in include.bin.Commands %}
+        {%- for tag in command.Tags %}
+            {%- for tagg in tag %}
+                {% assign value = tagg[1] | append:'|' | append:command.Category %}
+                {% assign tags = tags | push: value %}
+            {%- endfor %}
+        {%- endfor %}
+    {%- endfor %}
+
+    {% assign tag_list = tags | compact | uniq | group_by_exp: "item","item | split: '|' | slice:0,1" %}
+    {% for tag in tag_list %}
+        {% assign first_category = tag.items | first | split: '|' | last %}
+        <div><a href="{{ include.bin.url | relative_url }}#{{ first_category | downcase | url_encode | replace:'+','%20'}}">{{ tag.name }}</a></div>
+    {% endfor %}
+</div>

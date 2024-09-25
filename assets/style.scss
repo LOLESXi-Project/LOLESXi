@@ -2,8 +2,9 @@
 ---
 
 $accent: #096280;
-$lighter: #cdf0fc;
-$hover: #096280;
+$lighter: rgba($accent, 0.1);
+$hover: $accent;
+
 
 // layout
 
@@ -25,6 +26,10 @@ $layout-break: "(min-width: #{$column-width + $grace-space})";
 @media not all and #{$layout-break} {
     .github-corner {
         display: none;
+    }
+
+    .acknowledgements {
+        column-count: 2 !important;
     }
 }
 
@@ -56,7 +61,6 @@ code {
     padding: 0.15em 0.25em;
     border-radius: 0.25em;
     color: $accent;
-    background: $lighter;
 }
 
 pre {
@@ -268,6 +272,10 @@ ul {
 .acknowledgements {
     column-count: 4;
     column-gap: 20px;
+
+    li {
+        break-inside: avoid-column;
+    }
 }
 
 .tags {

@@ -11,7 +11,7 @@ Commands:
     Privileges: Administrator
     MitreID: T1082
     OperatingSystem: ESXi
-    ProceduralExamples: 
+    ProceduralExamples:
     - esxcli --formatter=csv vm process list
     - /bin/sh -c esxcli vm process list > list
   - Command: esxcli vm process kill --type=force --world-id=796791
@@ -76,28 +76,28 @@ Commands:
     Usecase: An adversary carries out enumeration of storage.
     Category: discover storage
     Privileges: Administrator
-    MitreID: 
+    MitreID:
     OperatingSystem: ESXi
-  - Command: esxcli --format-param=fields=="Type,ObjectUUID,Configuration” vsan debug object list 
+  - Command: esxcli --format-param=fields=="Type,ObjectUUID,Configuration” vsan debug object list
     Description: List the UUID of the vSAN objects.
     Usecase: An adversary carries out enumeration of storage objects.
     Category: discover storage
     Privileges: Administrator
-    MitreID: 
+    MitreID:
     OperatingSystem: ESXi
   - Command: esxcli --formatter=csv --format-param=fields=="Device,DevfsPath” storage core device list
     Description: List the Devfs Path of the devices currently registered with the storage.
     Usecase: An adversary carries out enumeration of devices connected to storage.
     Category: discover storage
     Privileges: Administrator
-    MitreID: 
+    MitreID:
     OperatingSystem: ESXi
   - Command: esxcli --formatter=csv network ip interface ipv4 get
     Description: Displays network interface details.
     Usecase: An adversary may obtain information regarding network interfaces available in the ESXi host.
     Category: discover network info
     Privileges: Administrator
-    MitreID: 
+    MitreID:
     OperatingSystem: ESXi
     ProceduralExamples:
     - esxcli --formatter=csv network ip interface ipv4 get
@@ -106,21 +106,21 @@ Commands:
     Usecase: To bypass additional validation when installing malicious VIBs, an adversary uses the force and no signature checking switches. Malicious VIBs are used to maintain persistent and command execution capability with an ESXi host and its guest VMs.
     Category: software operation
     Privileges: Administrator
-    MitreID: 
+    MitreID:
     OperatingSystem: ESXi
   - Command: esxcli software acceptance set --level CommunitySupported
     Description: Changes the VIB acceptance level to CommunitySupported.
     Usecase: ESXi by default will require it to be signed and by default set to PartnerSupported level. An adversary may change the VIB acceptance level to CommunitySupported level prior to running VIB installation.
     Category: software operation
     Privileges: Administrator
-    MitreID: 
+    MitreID:
     OperatingSystem: ESXi
     Tags:
      - E-Crime: PINCHY SPIDER
      - E-Crime: REvix
      - E-Crime: Rhysida
      - E-Crime: VIKING SPIDER
-     - E-Crime: Ragnar Locker                        
+     - E-Crime: Ragnar Locker
      - E-Crime: RansomHouse
      - E-Crime: Darkside
      - E-Crime: Qilin
@@ -134,8 +134,8 @@ Commands:
      - APT: UNC3886
 Full_Path:
   - Path: /bin/esxcli
-  - Path: /sbin/esxcli 
-Detection: 
+  - Path: /sbin/esxcli
+Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/linux/process_creation/proc_creation_lnx_esxcli_system_discovery.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/linux/process_creation/proc_creation_lnx_esxcli_vm_kill.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/linux/process_creation/proc_creation_lnx_esxcli_vsan_discovery.yml
@@ -157,7 +157,7 @@ Resources:
   - Link: https://www.trellix.com/en-au/blogs/research/ransomhouse-am-see/
   - Link: https://www.trendmicro.com/en_us/research/21/e/darkside-linux-vms-targeted.html
   - Link: https://x.com/malwrhunterteam/status/1704974867542532286/photo/3
-  - Link: https://cloud.google.com/blog/topics/threat-intelligence/vmware-esxi-zero-day-bypass 
+  - Link: https://cloud.google.com/blog/topics/threat-intelligence/vmware-esxi-zero-day-bypass
   - Link: https://cloud.google.com/blog/topics/threat-intelligence/esxi-hypervisors-malware-persistence
   - Link: https://blogs.vmware.com/vsphere/2011/09/whats-in-a-vib.html
   - Link: https://www.hybrid-analysis.com/sample/be5d2e94c2498ec052fb025e3348085e418c856dd43080501acfe2067ba54c41/6553b8f44c06e50d5408581f
@@ -186,7 +186,7 @@ Acknowledgement:
   - Person: Darrel Tristan Virtusio
   - Person: Sarah Pearl Camiling
   - Person: Andrei Alimboyao
-  - Person: Nathaniel Morales 
+  - Person: Nathaniel Morales
   - Person: Jacob Santos
   - Person: Earl John Bareng
   - Person: Alexander Marvi
