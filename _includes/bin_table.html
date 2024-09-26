@@ -1,113 +1,115 @@
-<input id="bin-search" type="text" placeholder="Search among {{ site.lolesxi | size }} binaries by name (e.g. 'esxcli'), function (e.g. '/List Volumes') or ATT&CK info (e.g. 'T1489')"/>
+<input id="bin-search" type="text" placeholder="Search among {{ site.lolesxi | size }} binaries by name (e.g. 'esxcli'), function (e.g. '/List Volumes'), tag (e.g. '#Lockbit') or ATT&CK info (e.g. 'T1489')" />
 
 <div id="bin-table-wrapper">
     <table id="bin-table">
         <thead>
             <tr>
-                <th style="width: 35%">Binary</th>
+                <th style="width: auto">Binary</th>
+                <th>Type</th>
                 <th>Functions</th>
-                <th style="width: 10%">Type</th>
+                <th>Tags</th>
                 <th style="width: 15%">ATT&CK&reg; Techniques</th>
             </tr>
         </thead>
         <tbody>
             {% for file in site.lolesxi %}
             <tr>
-                <td><a href="{{ file.url | relative_url }}" class="bin-name">{{ file.Name }}</a></td>
+                <td style="width: 1%; white-space: nowrap;"><a href="{{ file.url | relative_url }}" class="bin-name">{{ file.Name }}</a></td>
+                <td style="width: 1%; white-space: nowrap;">{% include get_type_name path=file.path %}</td>
                 <td>{% include function_list.html bin=file %}</td>
-                <td>{% include get_type_name path=file.path %}</td>
+                <td>{% include get_tags bin=file %}</td>
                 <td>{% include get_attack_tids.html bin=file %}</td>
             </tr>
             {% endfor %}
         </tbody>
         <tfoot>
-            <tr><td id="search-message" colspan="4">No binary matches…</td></tr>
+            <tr>
+                <td id="search-message" colspan="4">No binary matches…</td>
+            </tr>
         </tfoot>
     </table>
 </div>
 
 <script>
- function filter(query) {
-     // consistently update the URL
-     location.hash = query;
+    function filter(query) {
+        // consistently update the URL
+        location.hash = query;
 
-     // determine the query type
-     var queryType = query[0];
-     if (queryType === '/' || queryType === '#') {
-         query = query.slice(1);
-     }
+        // determine the query type
+        var queryType = query[0];
+        if (queryType === '/' || queryType === '#') {
+            query = query.slice(1);
+        }
 
-     // filter rows
-     var noResults = true;
-     document.querySelectorAll('#bin-table tbody tr').forEach(function (row) {
-         var binName = row.children[0].firstElementChild.innerText.toLowerCase();
-         var functions = Array.from(row.children[1].firstElementChild.children)
-                              .map(function (x) { return x.innerText })
-                              .join('\n').toLowerCase();
+        // filter rows
+        var noResults = true;
+        document.querySelectorAll('#bin-table tbody tr').forEach(function (row) {
+            var binName = row.children[0].firstElementChild.innerText.toLowerCase();
+            var functions = Array.from(row.children[2].firstElementChild.children)
+                .map(function (x) { return x.innerText })
+                .join('\n').toLowerCase();
 
-     var types = row.children[2].textContent.toLowerCase();
-     var techniques = row.children[3].textContent.toLowerCase();
+            //var types = row.children[1].textContent.toLowerCase();
+            var techniques = row.children[4].textContent.toLowerCase();
+            var tags = row.children[3].textContent.toLowerCase();
 
-         if (queryType === '/')
-         {
+            if (queryType === '/') {
                 var against = functions;
-         }
-         else if (queryType === '#')
-         {
-                var against = types;
-         }
-         else
-         {
+            }
+            else if (queryType === '#') {
+                var against = tags;
+            }
+            else {
                 var against = binName + techniques;
-         }
+            }
 
-         if (against.indexOf(query) !== -1) {
-             row.style.display = '';
-             noResults = false;
-         } else {
-             row.style.display = 'none';
-         }
-     });
+            if (against.indexOf(query) !== -1) {
+                row.style.display = '';
+                noResults = false;
+            } else {
+                row.style.display = 'none';
+            }
+        });
 
-     // update the search message visibility
-     var searchMessage = document.getElementById('search-message');
-     searchMessage.style.display = noResults ? 'table-cell' : 'none';
- }
+        // update the search message visibility
+        var searchMessage = document.getElementById('search-message');
+        searchMessage.style.display = noResults ? 'table-cell' : 'none';
+    }
 
- (function () {
-     var searchBox = document.getElementById('bin-search');
+    (function () {
+        var searchBox = document.getElementById('bin-search');
 
-     // ensure height during filtering
-     var binTableWrapper = document.getElementById('bin-table-wrapper');
-     binTableWrapper.style.height = binTableWrapper.clientHeight + 'px';
+        // ensure height during filtering
+        var binTableWrapper = document.getElementById('bin-table-wrapper');
+        binTableWrapper.style.height = binTableWrapper.clientHeight + 'px';
 
-     // handle user input
-     searchBox.addEventListener('input', function () {
-         var query = searchBox.value.toLowerCase().trim();
-         filter(query);
-     });
+        // handle user input
+        searchBox.addEventListener('input', function () {
+            var query = searchBox.value.toLowerCase().trim();
+            filter(query);
+        });
 
-     // handle shortcuts
-     addEventListener('keydown', function (event) {
-         // focus search box on valid keydown
-         if (event.key.toLowerCase().match(/^[\/a-z]$/) &&
-             !(event.ctrlKey || event.altKey || event.metaKey)) {
-             searchBox.focus();
-         }
-         // clear filter on escape
-         else if (event.key === 'Escape') {
-             searchBox.value = '';
-             searchBox.focus();
-             filter('');
-         }
-     });
+        // handle shortcuts
+        addEventListener('keydown', function (event) {
+            // focus search box on valid keydown
+            if (event.key.toLowerCase().match(/^[\/a-z]$/) &&
+                !(event.ctrlKey || event.altKey || event.metaKey)) {
+                searchBox.focus();
+            }
+            // clear filter on escape
+            else if (event.key === 'Escape') {
+                searchBox.value = '';
+                searchBox.focus();
+                filter('');
+            }
+        });
 
-     // filter on load according to the URL
-     var query = decodeURIComponent(location.hash.slice(1));
-     filter(query);
-     if (query) {
-         searchBox.value = query;
-         searchBox.focus();
-     }
- })();
+        // filter on load according to the URL
+        var query = decodeURIComponent(location.hash.slice(1));
+        filter(query);
+        if (query) {
+            searchBox.value = query;
+            searchBox.focus();
+        }
+    })();
 </script>
