@@ -1,15 +1,15 @@
 ---
 layout: page
-title: LoLESXi
+title: LOLESXi
 ---
 <div class="header-box">
-<a href="https://github.com/blueteam0ps/lolESXi/README.md"><img src="{{ '/assets/logo.png' | relative_url }}" height="150" alt="{{site.title}} Logo" style="margin-right: 20px;"></a>
+<a href="https://github.com/LOLESXi-Project/LOLESXi/blob/main/README.md"><img src="{{ '/assets/logo.png' | relative_url }}" height="150" alt="{{site.title}} Logo" style="margin-right: 20px;"></a>
 <div>
 <h2 style="margin-top: 0">Living Off The Land ESXi</h2>
 
 
-LoLESXi is a curated compilation of binaries available in VMware ESXi that are were used to by adversaries in their operations. This project gathers procedural examples from public reports of adversarial activities targeting ESXi hosts and offers an interface for the broader cyber defence community to search and  learn through these examples.
-<br><br> This project is a collaborative project. Special thanks to <a href="https://github.com/wietze">@wietze</a> and the <a href="https://lolbas-project.github.io/">LOLBAS project</a> for the theme. 
+LOLESXi contains a list of binaries natively available in VMware ESXi that are were used to by adversaries in their operations. Information contained in this site is gathered via open source threat research.
+<br><br> This project is a collaborative project created by <a href="https://twitter.com/blueteam0ps_">Janantha Marasinghe</a>. Special thanks to <a href="https://twitter.com/wietze">Wietze Beukema</a> for his contributions and the <a href="https://lolbas-project.github.io/">LOLBAS project</a> for the theme. 
 If you would like to <a href="{{ '/contributors' | relative_url}}">contribute</a>, check out our
 <a href="/CONTRIBUTING.md">contribution guide</a>.
 More information on programmatically accesssing this project can be found on the <a href="{{'/api' | relative_url }}">API page</a>.
