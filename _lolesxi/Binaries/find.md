@@ -8,7 +8,7 @@ Commands:
     Description: Locates files with extensions commonly associated with Virtual Machines, such as .vmdk and .vmx within /vmfs/volumes folder path. This may be performed programmatically and additional switches can be used to exclude specific folders from the search.
     Usecase: Locate virtual machine disks in preparation for encryption operations or for exfiltration.
     Category: Find Files
-    Privileges: User
+    Privileges: Administrator
     MitreID: T1083
     OperatingSystem: ESXi
     ProceduralExamples: | 
@@ -46,7 +46,8 @@ Code_Sample:
   - Code:
 Detection:
   - Elastic: https://github.com/elastic/detection-rules/blob/main/rules/linux/defense_evasion_rename_esxi_index_file.toml
-  - Elastic: https://github.com/elastic/detection-rules/blob/main/rules/linux/defense_evasion_rename_esxi_index_file.toml
+AtomicTests:
+  - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1083/T1083.md#atomic-test-7---esxi---enumerate-vmdks-available-on-an-esxi-host
 Resources:
   - Link: https://www.varonis.com/blog/vmware-esxi-in-the-line-of-ransomware-fire
   - Link: https://www.trellix.com/en-au/blogs/research/ransomhouse-am-see/

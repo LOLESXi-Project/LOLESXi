@@ -1,6 +1,6 @@
 ---
 Name: esxcfg-advcfg
-Description: A command-line utility used in VMware ESXi to manage advanced configuration settings on an ESXi host. It allows administrators to query, modify, and manage various advanced parameters that are not typically available through the standard vSphere Client or the ESXi host client interface.
+Description: A command-line utility available in VMware ESXi to manage advanced configuration settings. It allows administrators to query, modify, and manage various advanced parameters that are not typically available through the standard vSphere Client or the ESXi host client interface.
 Author: 'Janantha Marasinghe @blueteam0ps_'
 Created: 2024-08-31
 Commands:

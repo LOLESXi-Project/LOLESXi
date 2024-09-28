@@ -67,6 +67,20 @@ layout: common
 </div>
 {% endif %}
 <br>
+{% assign atomic_tests = page.AtomicTests %}
+{% if atomic_tests and atomic_tests.size > 0 %}
+<br>
+<div>
+	<b>Atomic Tests:</b>
+	<ul>
+		{% for test in atomic_tests %}
+			<li>
+				<a href="{{ test }}" target="_new">{{ test }}</a>
+			</li>
+		{% endfor %}
+	</ul>
+</div>
+{% endif %}
 
 {% assign test = page.Commands | group_by:"Category"%}
 {% for Command in test%}

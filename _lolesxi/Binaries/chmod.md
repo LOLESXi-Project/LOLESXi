@@ -20,7 +20,7 @@ Commands:
 Commands:
   - Command: /bin/chmod +w /var/spool/cron/crontabs/root
     Description: Making a file writeable.
-    Usecase: An adversary modifies permissions of a file to make it writable. After the file is modified this may be reverted to a more restrictive permissions to prevent others from editing it.
+    Usecase: An adversary alters a file's permissions to allow write access. Once the file has been modified, they may revert it to more restrictive permissions to prevent it being edited by other users.
     Category: Change File Permission
     Privileges: User
     MitreID: T1222.002

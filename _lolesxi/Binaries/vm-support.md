@@ -8,7 +8,7 @@ Commands:
     Description: Lists running Virtual Machines
     Usecase: Obtains a list of running Virtual Machines
     Category: Lists VMs
-    Privileges: User
+    Privileges: Administrator
     MitreID: T1082
     OperatingSystem: ESXi
     Tags:
@@ -16,8 +16,6 @@ Commands:
 Full_Path:
   - Path: /sbin/vm-support
   - Path: /bin/vm-support
-Detection:
-  - Sigma: 
 Resources:
   - Link: https://www.trendmicro.com/en_us/research/22/a/analysis-and-Impact-of-lockbit-ransomwares-first-linux-and-vmware-esxi-variant.html
 Acknowledgement:

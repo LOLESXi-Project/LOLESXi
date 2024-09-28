@@ -5,7 +5,7 @@ Author: 'Janantha Marasinghe @blueteam0ps_'
 Created: 2024-08-27
 Commands:
   - Command: pkill -9 %s
-    Description: Terminates all processes on the ESXi host that starts with vmx- prefix.
+    Description: Terminates all processes starts with the vmx- prefix.
     Usecase: Forceful termination of Virtual Machines
     Category: terminate process
     Privileges: Administrator
@@ -19,8 +19,8 @@ Full_Path:
   - Path: /bin/vmkvsitools pkill 
   - Path: /sbin/pkill
   - Path: /bin/pkill
-Detection:
-  - Sigma: 
+AtomicTests:
+  - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1529/T1529.md#atomic-test-13---esxi---terminates-vms-using-pkill
 Resources:
   - Link: https://www.crowdstrike.com/blog/hypervisor-jackpotting-ecrime-actors-increase-targeting-of-esxi-servers/
   - Link: https://www.forescout.com/resources/rise-in-linux-ransomware/

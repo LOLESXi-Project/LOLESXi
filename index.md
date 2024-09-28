@@ -8,7 +8,7 @@ title: LOLESXi
 <h2 style="margin-top: 0">Living Off The Land ESXi</h2>
 
 
-LOLESXi contains a list of binaries natively available in VMware ESXi that are were used to by adversaries in their operations. Information contained in this site is gathered via open source threat research.
+LOLESXi features a comprehensive list of binaries/scripts natively available in VMware ESXi that adversaries have utilised in their operations. The information on this site is compiled from open-source threat research.
 <br><br> This project is a collaborative project created by <a href="https://twitter.com/blueteam0ps_">Janantha Marasinghe</a>. Special thanks to <a href="https://twitter.com/wietze">Wietze Beukema</a> for his contributions and the <a href="https://lolbas-project.github.io/">LOLBAS project</a> for the theme. 
 If you would like to <a href="{{ '/contributors' | relative_url}}">contribute</a>, check out our
 <a href="/CONTRIBUTING.md">contribution guide</a>.
