@@ -2,8 +2,6 @@ LOLESXi is a curated list of living off the land behaviours observed via public 
 
 Please refer to `NOTICE.md` for license information.
 <p align="center">
-    <a href="https://github.com/LOLESXi-Project/LOLESXi/actions/workflows/yaml-linting.yml/badge.svg?branch=master">
-        <img src="https://img.shields.io/github/actions/workflow/status/LOLESXi-Project/LOLESXi/yaml-linting.yml?branch=master" /></a>
     <a href="https://github.com/LOLESXi-Project/LOLESXi">
         <img src="https://github.com/LOLESXi-Project/LOLESXi/blob/main/assets/lolESXi-count.svg" /></a>
     <a href="https://github.com/LOLESXi-Project/LOLESXi/stargazers">
