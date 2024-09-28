@@ -24,8 +24,6 @@ Commands:
 Full_Path:
   - Path: /sbin/vmkfstools
   - Path: /bin/vmkfstools
-Detection:
-  - Sigma: 
 Resources:
   - Link: https://www.bleepingcomputer.com/news/security/linux-version-of-qilin-ransomware-focuses-on-vmware-esxi/
 Acknowledgement:

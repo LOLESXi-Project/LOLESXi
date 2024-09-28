@@ -8,7 +8,7 @@ Commands:
     Description: Changes modification or access timestamps of a target file based on a reference file.
     Usecase: An adversary uses the modification and access timestamps of a references file and updates the same timestampts of a target file. This is to hinder analysis based on timestamps as the malicious file match the timestamps of a legitimate file.
     Category: Timestomp
-    Privileges: User
+    Privileges: Administrator
     MitreID:  T1070.006
     OperatingSystem: ESXi
     Tags:

@@ -8,12 +8,10 @@ Commands:
     Description: Changes the open file descriptor and pseudoterminals to unlimited.
     Usecase: An adversary modifies the resource limit thresholds to unlimited. This allows a single process to utilise all the system resources.
     Category: Adjust Performance
-    Privileges: User
+    Privileges: Administrator
     OperatingSystem: ESXi
     Tags:
      - E-Crime: Nevada
-Detection:
-  - Sigma:
 Resources:
   - Link: https://www.varonis.com/blog/vmware-esxi-in-the-line-of-ransomware-fire
 Acknowledgement:

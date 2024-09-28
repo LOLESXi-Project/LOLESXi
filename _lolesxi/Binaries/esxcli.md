@@ -1,6 +1,6 @@
 ---
 Name:  esxcli
-Description: esxcli is a command-line interface (CLI) tool used to manage VMware ESXi hosts. Using esxcli, administrators can perform various tasks related to ESXi host management, including network configuration, storage management, and VM operations.
+Description: esxcli is a command-line interface (CLI) tool (which is a python script) used to manage VMware ESXi hosts. Using esxcli, administrators can perform various tasks related to ESXi host management, including network configuration, storage management, and VM operations.
 Author: 'Janantha Marasinghe @blueteam0ps_'
 Created: 2024-08-27
 Commands:
@@ -143,6 +143,13 @@ Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/linux/process_creation/proc_creation_lnx_esxcli_storage_discovery.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/linux/process_creation/proc_creation_lnx_esxcli_network_discovery.yml
   - Elastic: https://github.com/elastic/detection-rules/blob/main/rules/linux/impact_esxi_process_kill.toml
+AtomicTests:
+  - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1082/T1082.md#atomic-test-31---esxi---vm-discovery-using-esxcli
+  - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1082/T1082.md#atomic-test-32---esxi---darkside-system-information-discovery
+  - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1129/T1129.md#atomic-test-1---esxi---install-a-custom-vib-on-an-esxi-host
+  - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1529/T1529.md#atomic-test-14---esxi---avoslocker-enumerates-vms-and-forcefully-kills-vms
+  - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1562.010/T1562.010.md#atomic-test-2---esxi---change-vib-acceptance-level-to-communitysupported-via-esxcli
+  - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1562.010/T1562.010.md#atomic-test-1---esxi---change-vib-acceptance-level-to-communitysupported-via-powercli
 Resources:
   - Link: https://www.crowdstrike.com/blog/hypervisor-jackpotting-ecrime-actors-increase-targeting-of-esxi-servers/
   - Link: https://www.trendmicro.com/en_us/research/22/a/analysis-and-Impact-of-lockbit-ransomwares-first-linux-and-vmware-esxi-variant.html

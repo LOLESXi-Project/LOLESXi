@@ -1,11 +1,11 @@
 ---
 Name: kill
-Description: Allows manually termination of processes of interest.
+Description: Allows manual termination of processes of interest.
 Author: 'Janantha Marasinghe @blueteam0ps_'
 Created: 2024-08-27
 Commands:
   - Command: kill -9 {process}
-    Description: Terminates processes in a ESXi Host
+    Description: Terminates processes on an ESXi Host
     Usecase: An adversary may list processes starting with vmx and then extracts the second column from the output and uses it to terminate the process. Further, research indicates that adversaries enumerate ssh sessions by non-root users and sends a kill signal 9 to terminate them. This ceases ssh sessions initiated by legitimate users and allows the adversary to operate further using root user account.
     Category: Terminate Process
     Privileges: Administrator

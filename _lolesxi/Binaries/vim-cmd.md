@@ -28,8 +28,8 @@ Commands:
     MitreID: T1082
     OperatingSystem: ESXi
   - Command: vim-cmd vmsvc/getallvms
-    Description: Displays the list of VMs available on the ESXi host.
-    Usecase: Shows running VMs on the ESXi Host. Adversaries were seen use this techinique to programatically enumerate VMs and powers them down using the Vmid.
+    Description: Displays the list of VMs available on an ESXi host.
+    Usecase: Shows running VMs on an ESXi Host. Adversaries were seen use this techinique to programatically enumerate VMs and powers them down using the Vmid.
     Category: System Information
     Privileges: Administrator
     MitreID: T1082 
@@ -65,8 +65,6 @@ Commands:
 Full_Path:
   - Path: /sbin/vim-cmd
   - Path: /bin/vim-cmd
-Detection:
-  - Sigma: 
 Resources:
   - Link: https://www.trendmicro.com/en_us/research/22/a/analysis-and-Impact-of-lockbit-ransomwares-first-linux-and-vmware-esxi-variant.html
   - Link: https://thedxt.ca/2023/12/esxi-autostart-vms-with-cli/
