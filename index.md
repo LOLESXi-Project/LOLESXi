@@ -9,10 +9,10 @@ title: LOLESXi
 
 
 LOLESXi features a comprehensive list of binaries/scripts natively available in VMware ESXi that adversaries have utilised in their operations. The information on this site is compiled from open-source threat research.
-<br><br> This project is a collaborative project created by <a href="https://twitter.com/blueteam0ps_">Janantha Marasinghe</a>. Special thanks to <a href="https://twitter.com/wietze">Wietze Beukema</a> for his contributions and the <a href="https://lolbas-project.github.io/">LOLBAS project</a> for the theme. 
-If you would like to <a href="{{ '/contributors' | relative_url}}">contribute</a>, check out our
-<a href="/CONTRIBUTING.md">contribution guide</a>.
-More information on programmatically accesssing this project can be found on the <a href="{{'/api' | relative_url }}">API page</a>.
+<br><br> This project is a collaborative project created by <a href="https://twitter.com/blueteam0ps_">Janantha Marasinghe</a>.Special thanks to <a href="https://twitter.com/wietze">Wietze Beukema</a> for his contributions and the <a href="https://lolbas-project.github.io/">LOLBAS project</a> for the theme. 
+If you would like to <a href="https://github.com/LOLESXi-Project/LOLESXi/graphs/contributors">contribute</a>, check out our
+<a href="https://github.com/LOLESXi-Project/LOLESXi/blob/main/CONTRIBUTE.md">contribution guide</a>.
+More information on programmatically accesssing this project can be found on the <a href="https://github.com/LOLESXi-Project/LOLESXi/blob/main/api/index.md">API page</a>.
 <br>
 <br>
 <span style="font-style: italic;">MITRE ATT&amp;CK&reg; and ATT&amp;CK&reg; are registered trademarks of The MITRE Corporation.</span> You can see the current ATT&amp;CK&reg; mapping of this project on the <a href="https://mitre-attack.github.io/attack-navigator/#layerURL={{ '/mitre_attack_navigator_layer.json' | absolute_url | replace:"http://","https://" }}">ATT&amp;CK&reg; Navigator</a>.
