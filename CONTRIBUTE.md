@@ -22,9 +22,11 @@ Commands:
     ProceduralExamples: 
     - 
 Full_Path:
-  - Path:
+ - Path:
 Detection:
   - Sigma:
+AtomicTests:
+  -
 Resources:
   - Link:
 Acknowledgement:
