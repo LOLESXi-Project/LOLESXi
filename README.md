@@ -52,9 +52,7 @@ Interesting functionality can include:
 
 ## Contributing
 
-If you would like to contribute, please review the contributing guidelines located here: https://github.com/LOLESXi-Project/LOLESXi/master/CONTRIBUTE.md
-
-A template for the required format has been provided here: https://github.com/LOLESXi-Project/LOLESXi/master/YML-Template.yml
+If you would like to contribute, please review the contributing guidelines located here: https://github.com/LOLESXi-Project/LOLESXi/blob/main/CONTRIBUTE.md
 
 ## The History of the LOLBin
 
