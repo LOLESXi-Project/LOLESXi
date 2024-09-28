@@ -1,5 +1,21 @@
 ---
 E-Crime:
-  Cyborg Spider: ''
-  Pysa: ''
-  
+  Cyborg Spider: 'Develop and operates Pysa ransomware'
+  PINCHY SPIDER: 'Operates REvix ransomware'
+  REvix: 'ELF ransomware binary targeting ESXi'
+  Rhysida: 'Ransomware operato that has similarities to Vice Society'
+  VIKING SPIDER: 'Developers of Ragnar Locker ransomware'
+  Ragnar Locker: 'Engages in multi-extortion and is developed by Viking Spider'
+  RansomHouse: 'A RaaS group that uses MrAgent tool to target VMWARE ESXi hosts'
+  Darkside: 'A RaaS group uses double extortion of its victims. Most notable incident was the Colonial Pipeline Company ransomware incident'
+  Qilin: 'Aka Agenda and is written in Golang. Uses double extortion technique and target large enterprises and high-value targets'
+  Blacksuit: 'Aka Royal targets mostly health, education and critical infrastructure'
+  ESXiArgs: 'ESXiArgs was involved with mass exploitation of CVE-2021-21974 vulnerability in the past'
+  Nevada: 'Nevada Ransomware operates via an an affiliate program and has been reported to have carried out a campaign targeting any ESXi machine that is exposed to the internet'
+  Blackcat: 'BlackCat (aka ALPHV,Noberus) ransomware is written in rust. Reported to have been created by a group of Russian-speaking cybercriminals'
+  Lockbit: 'A RaaS who utilises initial access brokers to gain access to victims. Reported to targets critical infrastructure sectors, financial services, transportation, food and agriculture, education, energy, government and emergency services'
+  Revil: 'Aka Sodinokibi is a Russian-based cybercriminal group that operates a RaaS model'
+  GwisinLocker: 'Reported to be targeting Linux-based systems in South Korea'
+  Play: 'A group that uses double-extortion with capabilities to target ESXi hosts.Based on reporting this group has targeted mostly US entities in the past'
+APT: 
+  UNC3886: 'A suspected Chinese threat actor who has used sophisticated and novel techniques during ESXi intrusions'
