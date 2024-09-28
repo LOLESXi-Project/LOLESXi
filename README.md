@@ -2,12 +2,12 @@ LOLESXi is a curated list of living off the land behaviours observed via public 
 
 Please refer to `NOTICE.md` for license information.
 <p align="center">
-    <a href="https://github.com/LOLBAS-Project/LOLBAS/actions/workflows/yaml-linting.yml/badge.svg?branch=master">
-        <img src="https://img.shields.io/github/actions/workflow/status/LOLBAS-Project/LOLBAS/yaml-linting.yml?branch=master" /></a>
-    <a href="https://github.com/LOLBAS-Project/LOLBAS">
-        <img src="https://lolbas-project.github.io/assets/lolbas-count.svg" /></a>
-    <a href="https://github.com/LOLBAS-Project/LOLBAS/stargazers">
-        <img src="https://img.shields.io/github/stars/LOLBAS-Project/LOLBAS?style=social" /></a>
+    <a href="https://github.com/LOLESXi-Project/LOLESXi/actions/workflows/yaml-linting.yml/badge.svg?branch=master">
+        <img src="https://img.shields.io/github/actions/workflow/status/LOLESXi-Project/LOLESXi/yaml-linting.yml?branch=master" /></a>
+    <a href="https://github.com/LOLESXi-Project/LOLESXi">
+        <img src="https://github.com/LOLESXi-Project/LOLESXi/blob/main/assets/lolESXi-count.svg" /></a>
+    <a href="https://github.com/LOLESXi-Project/LOLESXi/stargazers">
+        <img src="https://img.shields.io/github/stars/LOLESXi-Project/LOLESXi?style=social" /></a>
 </p>
 
 # Living Off the Land ESXi
