@@ -1,7 +1,7 @@
 ---
 NOTE: Please use the rendered version of this file.
 ---
-Filename,Description,Author,Date,Command,Command Description,Command Usecase,Command Category,Command Privileges,MITRE ATT&CK technique,Operating System,Paths,Detections,Resources,Acknowledgements,URL,Tags
+Filename,Description,Author,Date,Command,Command Description,Command Usecase,Command Category,Command Privileges,MITRE ATT&CK technique,Operating System,Detections,AtomicTests,Resources,Acknowledgements,URL,Tags
 {%for file in site.lolesxi%}
 {%-assign paths = ''%}{%for path in file.Full_Path%}{%assign paths = paths | append:path.Path%}{%unless forloop.last%}{%assign paths = paths | append:', '%}{%endunless%}{%endfor%}
 {%-assign detections = ''%}{%for detection in file.Detection%}{%assign detections = detections | append:detection.first[0] | append:": " | append:detection.first[1]%}{%unless forloop.last%}{%assign detections = detections | append:', '%}{%endunless%}{%endfor%}
