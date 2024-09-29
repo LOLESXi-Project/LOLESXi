@@ -5,7 +5,8 @@ function shorten_url(url_input) {
     var url_parsed = new URL(url_input);
     if(['github.com', 'www.github.com'].includes(url_parsed.hostname) && url_parsed.pathname.includes('/blob/')){
         let parts = url_parsed.pathname.split('/')
-        return parts.slice(-1);
+        let hashes = url_parsed.hash;
+        return parts.slice(-1) + (hashes || "");
     }
     return url_input
 }
