@@ -15,7 +15,7 @@ NOTE: Please use the rendered version of this file
 
     <rect rx="3" width="105" height="20" fill="url(#a)"/>
     <g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="11">
-        <text x="30" y="14">LOLBAS</text>
-        <text x="83" y="14">{{ site.lolbas | size }}</text>
+        <text x="30" y="14">LOLESXi</text>
+        <text x="83" y="14">{{ site.lolesxi | size }}</text>
     </g>
 </svg>
