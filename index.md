@@ -9,7 +9,7 @@ title: LOLESXi
 
 
 LOLESXi features a comprehensive list of binaries/scripts natively available in VMware ESXi that adversaries have utilised in their operations. The information on this site is compiled from open-source threat research.
-<br><br> This project is a collaborative project created by <a href="https://twitter.com/blueteam0ps_">Janantha Marasinghe</a>.Special thanks to <a href="https://twitter.com/wietze">Wietze Beukema</a> for his contributions and the <a href="https://lolbas-project.github.io/">LOLBAS project</a> for the theme. 
+<br><br> This project is a collaborative project created by <a href="https://twitter.com/blueteam0ps_">Janantha Marasinghe</a>. Special thanks to <a href="https://twitter.com/wietze">Wietze Beukema</a> for his contributions and the <a href="https://lolbas-project.github.io/">LOLBAS project</a> for the theme.
 If you would like to <a href="https://github.com/LOLESXi-Project/LOLESXi/graphs/contributors">contribute</a>, check out our
 <a href="https://github.com/LOLESXi-Project/LOLESXi/blob/main/CONTRIBUTE.md">contribution guide</a>.
 More information on programmatically accesssing this project can be found on the <a href="https://github.com/LOLESXi-Project/LOLESXi/blob/main/api/index.md">API page</a>.
@@ -22,7 +22,7 @@ If you are looking for UNIX binaries, please visit <a href="https://gtfobins.git
 <br>
 If you are looking for drivers, please visit <a href="https://www.loldrivers.io/">loldrivers.io</a>.
 <br>
-If you are looking for Windows Binaries,Scripts and Libraries  please visit <a href="https://lolbas-project.github.io/">lolbas-project.github.io</a>.
+If you are looking for Windows Binaries, Scripts and Libraries please visit <a href="https://lolbas-project.github.io/">lolbas-project.github.io</a>.
 <br>
 <br>
 <small><a href="https://www.flaticon.com/free-icons/robot" title="robot icons">Icon Credit : Robot icons created by juicy_fish - Flaticon</a></small>
