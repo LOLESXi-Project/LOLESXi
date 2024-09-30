@@ -1,14 +1,15 @@
 ---
 NOTE: Please use the rendered version of this file.
 ---
-Filename,Description,Author,Date,Command,Command Description,Command Usecase,Command Category,Command Privileges,MITRE ATT&CK technique,Operating System,Detections,AtomicTests,Resources,Acknowledgements,URL,Tags
+Filename,Description,Author,Date,Command,Command Description,Command Usecase,Command Category,Command Privileges,MITRE ATT&CK technique,Operating System,Paths,Detections,AtomicTestsResources,Acknowledgements,URL,Tags
 {%for file in site.lolesxi%}
 {%-assign paths = ''%}{%for path in file.Full_Path%}{%assign paths = paths | append:path.Path%}{%unless forloop.last%}{%assign paths = paths | append:', '%}{%endunless%}{%endfor%}
 {%-assign detections = ''%}{%for detection in file.Detection%}{%assign detections = detections | append:detection.first[0] | append:": " | append:detection.first[1]%}{%unless forloop.last%}{%assign detections = detections | append:', '%}{%endunless%}{%endfor%}
 {%-assign resources = ''%}{%for resource in file.Resources%}{%assign resources = resources | append:resource.Link%}{%unless forloop.last%}{%assign resources = resources | append:', '%}{%endunless%}{%endfor%}
+{%-assign atomic_tests = ''%}{%for resource in file.AtomicTests%}{%assign atomic_tests = atomic_tests | append:resource%}{%unless forloop.last%}{%assign atomic_tests = atomic_tests | append:', '%}{%endunless%}{%endfor%}
 {%-assign acknowledgements = ''%}{%for acknowledgement in file.Acknowledgement%}{%assign acknowledgements = acknowledgements | append:acknowledgement.Person%}{%if acknowledgement.Handle != null and acknowledgement.Handle != ""%}{%assign acknowledgements = acknowledgements | append:' (' | append:acknowledgement.Handle | append:')'%}{%endif%}{%unless forloop.last%}{%assign acknowledgements = acknowledgements | append:', '%}{%endunless%}{%endfor%}
 {%-for command in file.Commands-%}
 {%-assign tags = ''|split:''-%}{%-for tag_items in command.Tags-%}{%-for tag_item in tag_items-%}{%-assign tag=tag_item | join:':' |replace:'"', '""'-%}{%-assign tags=tags | push: tag-%}{%-endfor-%}{%-endfor-%}
-"{{file.Name|replace:'"', '""'}}","{{file.Description|replace:'"', '""'}}","{{file.Author|replace:'"', '""'}}","{{file.Created|replace:'"', '""'}}","{{command.Command|replace:'"', '""'}}","{{command.Description|replace:'"', '""'}}","{{command.Usecase|replace:'"', '""'}}","{{command.Category|replace:'"', '""'}}","{{command.Privileges|replace:'"', '""'}}","{{command.MitreID|replace:'"', '""'}}","{{command.OperatingSystem|replace:'"', '""'}}","{{paths|replace:'"', '""'}}","{{detections|replace:'"', '""'}}","{{resources|replace:'"', '""'}}","{{acknowledgements|replace:'"', '""'}}","{{file.url | absolute_url}}","{{tags | compact | join:','}}"
+"{{file.Name|replace:'"', '""'}}","{{file.Description|replace:'"', '""'}}","{{file.Author|replace:'"', '""'}}","{{file.Created|replace:'"', '""'}}","{{command.Command|replace:'"', '""'}}","{{command.Description|replace:'"', '""'}}","{{command.Usecase|replace:'"', '""'}}","{{command.Category|replace:'"', '""'}}","{{command.Privileges|replace:'"', '""'}}","{{command.MitreID|replace:'"', '""'}}","{{command.OperatingSystem|replace:'"', '""'}}","{{paths|replace:'"', '""'}}","{{detections|replace:'"', '""'}}","{{atomic_tests|replace:'"', '""'}}","{{resources|replace:'"', '""'}}","{{acknowledgements|replace:'"', '""'}}","{{file.url | absolute_url}}","{{tags | compact | join:','}}"
 {%endfor-%}
 {%endfor-%}
