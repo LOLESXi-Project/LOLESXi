@@ -48,6 +48,25 @@ $layout-break: "(min-width: #{$column-width + $grace-space})";
         max-width: 60vw !important;
         transform: translate(-60%, calc(-100% - 2em));
     }
+
+    ol:has(> :nth-child(2)) {
+        padding-left: 1em !important;
+    }
+
+    .properties .row {
+        flex-wrap: wrap;
+
+        .property {
+            min-width: unset;
+            width: unset;
+        }
+    }
+
+    h2.function-name {
+        margin-top: 1em !important;
+        padding-top: 1em;
+        border-top: 1px dotted black;
+    }
 }
 
 // common tags
@@ -348,7 +367,7 @@ ul {
 }
 
 ol+h2.function-name {
-    margin-top: 3em;
+    margin-top: 2em;
 }
 
 ol {
@@ -356,7 +375,7 @@ ol {
 }
 
 ol li+li {
-    margin-top: 3em;
+    margin-top: 1em;
 }
 
 ol li:only-child {

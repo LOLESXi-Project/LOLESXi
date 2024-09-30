@@ -2,7 +2,7 @@
 NOTE: Please use the rendered version of this file.
 ---
 [{%-for file in site.lolesxi-%}
-{%assign keys = "Name,Description,Author,Created,Commands,Full_Path,Detection,Resources" | split:','-%}
+{%assign keys = "Name,Description,Author,Created,Commands,Full_Path,Detection,AtomicTests,Resources" | split:','-%}
 {
 {%-for key in keys%}"{{key}}":{{file[key] | jsonify}},{%endfor%}"url":"{{file.url | absolute_url}}"}{% unless forloop.last %},{% endunless -%}
 {%-endfor-%}]
