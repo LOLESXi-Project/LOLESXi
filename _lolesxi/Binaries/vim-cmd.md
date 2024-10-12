@@ -36,6 +36,7 @@ Commands:
     OperatingSystem: ESXi
     ProceduralExamples: 
     - /bin/sh -c “for vmid in $(vim-cmd vmsvc/getallvms | grep -v Vmid | awk '{print $1}'); do vim-cmd vmsvc/power.off $vmid; done"
+    - for i in $(vim-cmd vmsvc/getallvms | awk '{print $1}' | grep -Eo '[0-9]{1,5}'); do vim-cmd vmsvc/power.off $i; vim-cmd vmsvc/snapshot.removeall $i; done;
   - Command: vim-cmd vmsvc/snapshot.removeall
     Description: Remove VM Snapshots
     Usecase: Deletes all snapshots of all Virtual Machines. This activity is usually observed near ransomware deployment and is often executed programatically.
@@ -59,9 +60,11 @@ Commands:
      - E-Crime: Blackcat
      - E-Crime: Qilin
      - E-Crime: Play
+     - E-Crime: Lynx
     ProceduralExamples:
     - vim-cmd vmsvc/getallvms | grep -o -E \'^[0-9]+\' | xargs -r -n 1 vim-cmd vmsvc/power.off
-    - /bin/sh -c “for vmid in $(vim-cmd vmsvc/getallvms | grep -v Vmid | awk '{print $1}'); do vim-cmd vmsvc/power.off $vmid; done" 
+    - /bin/sh -c “for vmid in $(vim-cmd vmsvc/getallvms | grep -v Vmid | awk '{print $1}'); do vim-cmd vmsvc/power.off $vmid; done"
+    - for i in $(vim-cmd vmsvc/getallvms | awk '{print $1}' | grep -Eo '[0-9]{1,5}'); do vim-cmd vmsvc/power.off $i; vim-cmd vmsvc/snapshot.removeall $i; done;
 Full_Path:
   - Path: /sbin/vim-cmd
   - Path: /bin/vim-cmd
@@ -73,6 +76,8 @@ Resources:
   - Link: https://www.bleepingcomputer.com/news/security/linux-version-of-qilin-ransomware-focuses-on-vmware-esxi/
   - Link: https://www.trendmicro.com/en_us/research/24/g/new-play-ransomware-linux-variant-targets-esxi-shows-ties-with-p.html
   - Link: https://x.com/malwrhunterteam/status/1455628865229950979?lang=en
+  - Link: https://www.hybrid-analysis.com/sample/a0ceb258924ef004fa4efeef4bc0a86012afdb858e855ed14f1bbd31ca2e42f5/661430861522cb62560ee827
+  - Link: https://unit42.paloaltonetworks.com/inc-ransomware-rebrand-to-lynx/
 Acknowledgement:
   - Person: Junestherry Dela Cruz
   - Person: Daniel Keer
@@ -88,5 +93,7 @@ Acknowledgement:
   - Person: Nathaniel Morales 
   - Person: Jacob Santos
   - Person: Earl John Bareng
-
+  - Person: Pranay Kumar Chhaparwal
+  - Person: Micah Yates
+  - Person: Benjamin Chang
 ---
