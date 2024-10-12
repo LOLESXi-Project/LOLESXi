@@ -17,5 +17,6 @@ E-Crime:
   Revil: 'Aka Sodinokibi is a Russian-based cybercriminal group that operates a RaaS model'
   GwisinLocker: 'Reported to be targeting Linux-based systems in South Korea'
   Play: 'A group that uses double-extortion with capabilities to target ESXi hosts.Based on reporting this group has targeted mostly US entities in the past'
+  Lynx: 'A RaaS group who shares code similarity of INC ransomware'
 APT: 
   UNC3886: 'A suspected Chinese threat actor who has used sophisticated and novel techniques during ESXi intrusions'
