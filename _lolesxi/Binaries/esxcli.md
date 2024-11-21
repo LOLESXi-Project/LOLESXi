@@ -67,14 +67,14 @@ Commands:
   - Command: esxcli network firewall set --enabled false
     Description: Disables the ESXi firewall.
     Usecase: An adversary changes the ESXi host based firewall so it will cause minimum interference with their operations.
-    Category: disable service
+    Category: disable or modify service
     Privileges: Administrator
     MitreID: T1562.004
     OperatingSystem: ESXi
   - Command: esxcli network firewall set --default-action true
     Description: Changes the ESXi firewall default action to PASS. Command is inferred based on vendor documentation, not available via CTI.
     Usecase: An adversary sets the default firewall action to pass allowing them to bypass any configured rules.
-    Category: disable service
+    Category: disable or modify service
     Privileges: Administrator
     MitreID: T1562.004
     OperatingSystem: ESXi
