@@ -42,7 +42,7 @@ Commands:
     Usecase: Deletes all snapshots of all Virtual Machines. This activity is usually observed near ransomware deployment and is often executed programatically.
     Category: Inhibit Recovery
     Privileges: Administrator
-    MitreID: T1485.001
+    MitreID: T1485
     OperatingSystem: ESXi
     ProceduralExamples:
      - for i in `vim-cmd vmsvc/getallvms| awk '{print$1}'`;do vim-cmd vmsvc/snapshot.removeall $i & done
