@@ -47,7 +47,7 @@
   * `ProceduralExamples` (Additional command examples observed via CTI);
   * `Description` (details of the 'lol' command behavior);
   * `Usecase` (details of the use case such as the purpose and technique;
-  * `Category` (LOLESXi categories include Terminate Process,Lists VMs,Terminate Running VM,System Information,Account Enumeration,Find Files,Remove Evidence,Find and Replace,Change File Permission,Discover storage,Enable Service,Disable Startup,Inhibit Recovery,Power off VM,Stop Service,Adjust Performance,Replace File,Timestomp,Change Display Information,Disable Service,Discover Network Info,Software Operation);
+  * `Category` (LOLESXi categories include Terminate Process,Lists VMs,Terminate Running VM,System Information,Account Enumeration,Find Files,Remove Evidence,Find and Replace,Change File Permission,Discover storage,Enable Service,Disable Startup,Inhibit Recovery,Power off VM,Stop Service,Adjust Performance,Replace File,Timestomp,Change Display Information,Disable Service, Modify Service, Discover Network Info,Software Operation);
   * `Privilege` (User or Administrator level privileges required);
   * `MitreId`[^1] (MITRE (R) ATT&CK(R) Tactic/Technique mapping);
   * `OperatingSystem` (version of ESXi if known).
