@@ -72,8 +72,8 @@ Commands:
     MitreID: T1562.004
     OperatingSystem: ESXi
   - Command: esxcli network firewall set --default-action true
-    Description: Changes the firewall default action to PASS.
-    Usecase: Changing the default firewall action to PASS effectively disables it.
+    Description: Changes the ESXi firewall default action to PASS.
+    Usecase: An adversary sets the default firewall action to pass allowing them to bypass any configured rules.
     Category: disable service
     Privileges: Administrator
     MitreID: T1562.004
@@ -179,6 +179,7 @@ Resources:
   - Link: https://www.hybrid-analysis.com/sample/be5d2e94c2498ec052fb025e3348085e418c856dd43080501acfe2067ba54c41/6553b8f44c06e50d5408581f
   - Link: https://www.forescout.com/resources/rise-in-linux-ransomware/
   - Link: https://www.reversinglabs.com/blog/gwisinlocker-ransomware-targets-south-korean-industrial-and-pharmaceutical-companies
+  - Link: https://developer.broadcom.com/xapis/esxcli-command-reference/7.0.0/
 Acknowledgement:
   - Person: Michael Dawson
   - Person: Junestherry Dela Cruz
