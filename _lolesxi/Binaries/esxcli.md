@@ -72,14 +72,14 @@ Commands:
     MitreID: T1562.004
     OperatingSystem: ESXi
   - Command: esxcli network firewall set --default-action true
-      Description: Changes the firewall default action to PASS.
-      Usecase: Changing the default firewall action to PASS effectively disables it.
-      Category: disable service
-      Privileges: Administrator
-      MitreID: T1562.004
-      OperatingSystem: ESXi
-      ProceduralExamples:
-        - esxcli network firewall set -d true
+    Description: Changes the firewall default action to PASS.
+    Usecase: Changing the default firewall action to PASS effectively disables it.
+    Category: disable service
+    Privileges: Administrator
+    MitreID: T1562.004
+    OperatingSystem: ESXi
+    ProceduralExamples:
+      - esxcli network firewall set -d true
   - Command: esxcli vsan debug vmdk list
     Description: List the status of VMDKs in vSAN.
     Usecase: An adversary carries out enumeration of storage.
