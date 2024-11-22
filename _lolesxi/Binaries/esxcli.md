@@ -71,6 +71,15 @@ Commands:
     Privileges: Administrator
     MitreID: T1562.004
     OperatingSystem: ESXi
+  - Command: esxcli network firewall set --default-action true
+    Description: Changes the ESXi firewall default action to PASS. Command is inferred based on vendor documentation, not available via CTI.
+    Usecase: An adversary sets the default firewall action to allow all incoming and outgoing traffic.
+    Category: modify service
+    Privileges: Administrator
+    MitreID: T1562.004
+    OperatingSystem: ESXi
+    ProceduralExamples:
+      - esxcli network firewall set -d true
   - Command: esxcli vsan debug vmdk list
     Description: List the status of VMDKs in vSAN.
     Usecase: An adversary carries out enumeration of storage.
@@ -170,6 +179,8 @@ Resources:
   - Link: https://www.hybrid-analysis.com/sample/be5d2e94c2498ec052fb025e3348085e418c856dd43080501acfe2067ba54c41/6553b8f44c06e50d5408581f
   - Link: https://www.forescout.com/resources/rise-in-linux-ransomware/
   - Link: https://www.reversinglabs.com/blog/gwisinlocker-ransomware-targets-south-korean-industrial-and-pharmaceutical-companies
+  - Link: https://developer.broadcom.com/xapis/esxcli-command-reference/7.0.0/
+  - Link: https://cloud.google.com/blog/topics/threat-intelligence/vmware-detection-containment-hardening
 Acknowledgement:
   - Person: Michael Dawson
   - Person: Junestherry Dela Cruz

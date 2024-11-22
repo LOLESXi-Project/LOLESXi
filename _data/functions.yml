@@ -108,3 +108,8 @@ software operation:
   label: Software Operation
   description: |
     Installs VIB a vSphere Installation Bundle or modifies VIB acceptance levels.
+
+modify service:
+  label: Modify Service
+  description: |
+    Modifies a service potentially impacting functionality.

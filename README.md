@@ -45,6 +45,7 @@ Interesting functionality can include:
 * Timestomp
 * Change Display Information
 * Disable Service
+* Modify Service
 * Discover Network Info
 * Software Operation
 
