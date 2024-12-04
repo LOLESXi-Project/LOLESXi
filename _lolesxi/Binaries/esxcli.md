@@ -87,14 +87,14 @@ Commands:
     Privileges: Administrator
     MitreID:
     OperatingSystem: ESXi
-  - Command: esxcli --format-param=fields=="Type,ObjectUUID,Configuration” vsan debug object list
+  - Command: esxcli --format-param=fields=="Type,ObjectUUID,Configuration" vsan debug object list
     Description: List the UUID of the vSAN objects.
     Usecase: An adversary carries out enumeration of storage objects.
     Category: discover storage
     Privileges: Administrator
     MitreID:
     OperatingSystem: ESXi
-  - Command: esxcli --formatter=csv --format-param=fields=="Device,DevfsPath” storage core device list
+  - Command: esxcli --formatter=csv --format-param=fields=="Device,DevfsPath" storage core device list
     Description: List the Devfs Path of the devices currently registered with the storage.
     Usecase: An adversary carries out enumeration of devices connected to storage.
     Category: discover storage
@@ -132,7 +132,7 @@ Commands:
     MitreID: T1562.012
     OperatingSystem: ESXi
     ProceduralExamples:
-      - /bin/sh -c 'esxcli system syslog config set --logdir=/tmp
+      - /bin/sh -c 'esxcli system syslog config set --logdir=/tmp'
   - Command: esxcli system coredump file set --unconfigure
     Description:  Disable creation of coredumps in ESXi
     Usecase: An adversary may disable coredump creation to prevent diagnostic data from being generated. This is to prevent traces of their activity from being available for inspection during investigations.
