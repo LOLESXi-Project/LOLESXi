@@ -113,3 +113,8 @@ modify service:
   label: Modify Service
   description: |
     Modifies a service potentially impacting functionality.
+    
+modify logging:
+  label: Modify Logging
+  description: |
+    Modifies logging configuration.

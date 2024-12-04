@@ -124,6 +124,15 @@ Commands:
     Privileges: Administrator
     MitreID:
     OperatingSystem: ESXi
+  - Command: esxcli system syslog config set --logdir=/tmp
+    Description:  Changes the syslog directory using esxcli. This is followed by the command esxcli system syslog reload
+    Usecase: An adversary may change the default directory where syslog log files are written to evade detection.
+    Category: modify logging
+    Privileges: Administrator
+    MitreID: T1562.012
+    OperatingSystem: ESXi
+    ProceduralExamples:
+      - /bin/sh -c 'esxcli system syslog config set --logdir=/tmp
     Tags:
      - E-Crime: PINCHY SPIDER
      - E-Crime: REvix
@@ -140,6 +149,7 @@ Commands:
      - E-Crime: Royal Ransomware
      - E-Crime: Lockbit
      - E-Crime: Revil
+     - E-Crime: Howling Scorpius
      - APT: UNC3886
 Full_Path:
   - Path: /bin/esxcli
@@ -181,6 +191,7 @@ Resources:
   - Link: https://www.reversinglabs.com/blog/gwisinlocker-ransomware-targets-south-korean-industrial-and-pharmaceutical-companies
   - Link: https://developer.broadcom.com/xapis/esxcli-command-reference/7.0.0/
   - Link: https://cloud.google.com/blog/topics/threat-intelligence/vmware-detection-containment-hardening
+  - Link: https://unit42.paloaltonetworks.com/threat-assessment-howling-scorpius-akira-ransomware/
 Acknowledgement:
   - Person: Michael Dawson
   - Person: Junestherry Dela Cruz
@@ -216,4 +227,5 @@ Acknowledgement:
   - Person: Tufail Ahmed
   - Person: Jonathan Lepore
   - Person: Joseph Edwards
+  - Person: Yoav Zemah
 ---

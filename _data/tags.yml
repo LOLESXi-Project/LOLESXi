@@ -18,5 +18,6 @@ E-Crime:
   GwisinLocker: 'Reported to be targeting Linux-based systems in South Korea'
   Play: 'A group that uses double-extortion with capabilities to target ESXi hosts.Based on reporting this group has targeted mostly US entities in the past'
   Lynx: 'A RaaS group who shares code similarity of INC ransomware'
+  Howling Scorpius: 'Attributed to be behind Akira RaaS which targets SMBs in North America, Europe and Australia, across various sectors'
 APT: 
   UNC3886: 'A suspected Chinese threat actor who has used sophisticated and novel techniques during ESXi intrusions'

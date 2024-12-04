@@ -37,6 +37,7 @@ Commands:
     ProceduralExamples: 
     - /bin/sh -c “for vmid in $(vim-cmd vmsvc/getallvms | grep -v Vmid | awk '{print $1}'); do vim-cmd vmsvc/power.off $vmid; done"
     - for i in $(vim-cmd vmsvc/getallvms | awk '{print $1}' | grep -Eo '[0-9]{1,5}'); do vim-cmd vmsvc/power.off $i; vim-cmd vmsvc/snapshot.removeall $i; done;
+    - vim-cmd vmsvc/getallvms | tail -n +2 | awk '{system("vim-cmd vmsvc/power.off " $1)}
   - Command: vim-cmd vmsvc/snapshot.removeall
     Description: Remove VM Snapshots
     Usecase: Deletes all snapshots of all Virtual Machines. This activity is usually observed near ransomware deployment and is often executed programatically.
@@ -61,10 +62,12 @@ Commands:
      - E-Crime: Qilin
      - E-Crime: Play
      - E-Crime: Lynx
+     - E-Crime: Howling Scorpius
     ProceduralExamples:
     - vim-cmd vmsvc/getallvms | grep -o -E \'^[0-9]+\' | xargs -r -n 1 vim-cmd vmsvc/power.off
     - /bin/sh -c “for vmid in $(vim-cmd vmsvc/getallvms | grep -v Vmid | awk '{print $1}'); do vim-cmd vmsvc/power.off $vmid; done"
     - for i in $(vim-cmd vmsvc/getallvms | awk '{print $1}' | grep -Eo '[0-9]{1,5}'); do vim-cmd vmsvc/power.off $i; vim-cmd vmsvc/snapshot.removeall $i; done;
+    - vim-cmd vmsvc/getallvms | tail -n +2 | awk '{system("vim-cmd vmsvc/power.off " $1)}
 Full_Path:
   - Path: /sbin/vim-cmd
   - Path: /bin/vim-cmd
@@ -78,6 +81,8 @@ Resources:
   - Link: https://x.com/malwrhunterteam/status/1455628865229950979?lang=en
   - Link: https://www.hybrid-analysis.com/sample/a0ceb258924ef004fa4efeef4bc0a86012afdb858e855ed14f1bbd31ca2e42f5/661430861522cb62560ee827
   - Link: https://unit42.paloaltonetworks.com/inc-ransomware-rebrand-to-lynx/
+  - Link: https://unit42.paloaltonetworks.com/threat-assessment-howling-scorpius-akira-ransomware/
+  - Link: https://research.checkpoint.com/2024/inside-akira-ransomwares-rust-experiment/
 Acknowledgement:
   - Person: Junestherry Dela Cruz
   - Person: Daniel Keer
@@ -96,4 +101,5 @@ Acknowledgement:
   - Person: Pranay Kumar Chhaparwal
   - Person: Micah Yates
   - Person: Benjamin Chang
+  - Person: Yoav Zemah
 ---
