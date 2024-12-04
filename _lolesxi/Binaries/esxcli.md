@@ -140,6 +140,7 @@ Commands:
      - E-Crime: Royal Ransomware
      - E-Crime: Lockbit
      - E-Crime: Revil
+     - E-Crime: Howling Scorpius
      - APT: UNC3886
 Full_Path:
   - Path: /bin/esxcli
