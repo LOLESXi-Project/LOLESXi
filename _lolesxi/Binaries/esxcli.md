@@ -133,6 +133,15 @@ Commands:
     OperatingSystem: ESXi
     ProceduralExamples:
       - /bin/sh -c 'esxcli system syslog config set --logdir=/tmp
+  - Command: esxcli system coredump file set --unconfigure
+    Description:  Disable creation of coredumps in ESXi
+    Usecase: An adversary may disable coredump creation to prevent diagnostic data from being generated. This is to prevent traces of their activity from being available for inspection during investigations.
+    Category: modify service
+    Privileges: Administrator
+    MitreID: T1562.001
+    OperatingSystem: ESXi
+    ProceduralExamples:
+      - /bin/sh -c 'esxcli system coredump file set --unconfigure' 
     Tags:
      - E-Crime: PINCHY SPIDER
      - E-Crime: REvix
