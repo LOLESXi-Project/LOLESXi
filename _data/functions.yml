@@ -118,3 +118,8 @@ modify logging:
   label: Modify Logging
   description: |
     Modifies logging configuration.
+    
+tunnel traffic:
+  label: Tunnel traffic
+  description: |
+    Tunnels network traffic for persistence and command and control.
