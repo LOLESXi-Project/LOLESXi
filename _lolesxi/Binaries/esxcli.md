@@ -14,6 +14,7 @@ Commands:
     ProceduralExamples:
     - esxcli --formatter=csv vm process list
     - /bin/sh -c esxcli vm process list > list
+    - esxcli vm process list
   - Command: esxcli vm process kill --type=force --world-id=796791
     Description: Terminates a Virtual Machine using its World ID.
     Usecase: Force terminates a VM using the WorldID when Soft or Hard terminates options fail. Soft termination allows the guest OS to gracefully shut down.This is similar to kill-SIGTERM. Gard mode immediately terminates a Virtual Machine using its World ID. It kills the VMX process and is similar to a kill -9 command
@@ -25,6 +26,7 @@ Commands:
     - esxcli vm process kill –type=hard –world-id=<ID>
     - esxcli vm process kill -w <WID> -t soft
     - esxcli --formatter=csv --format-param=fields=="WorldID,DisplayName" vm process list | awk -F "\"*,\"*" '{system("esxcli vm process kill --type=force --world-id=" $1)}'
+    - "For i in ‘esxcli VM Process List | grep “World ID” | awk ‘{print $3}”; do esxcli vm process kill -t=force -w=$i;done;"
   - Command: esxcli system version get
     Description: Display the product name, version and build information.
     Usecase: An adversary may use this to obtain the exact build version information of the ESXi host to facilitate subsequent actions.
@@ -159,6 +161,7 @@ Commands:
      - E-Crime: Lockbit
      - E-Crime: Revil
      - E-Crime: Howling Scorpius
+     - E-Crime: Helldown
      - APT: UNC3886
 Full_Path:
   - Path: /bin/esxcli
@@ -201,6 +204,7 @@ Resources:
   - Link: https://developer.broadcom.com/xapis/esxcli-command-reference/7.0.0/
   - Link: https://cloud.google.com/blog/topics/threat-intelligence/vmware-detection-containment-hardening
   - Link: https://unit42.paloaltonetworks.com/threat-assessment-howling-scorpius-akira-ransomware/
+  - Link: https://labs.yarix.com/2025/01/zyxel-vulnerability-exploited-by-helldown-ransomware-group/
 Acknowledgement:
   - Person: Michael Dawson
   - Person: Junestherry Dela Cruz
@@ -237,4 +241,5 @@ Acknowledgement:
   - Person: Jonathan Lepore
   - Person: Joseph Edwards
   - Person: Yoav Zemah
+  - Person: Claudio Vozza
 ---
