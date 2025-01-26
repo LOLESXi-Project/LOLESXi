@@ -26,6 +26,7 @@ Commands:
     - esxcli vm process kill –type=hard –world-id=<ID>
     - esxcli vm process kill -w <WID> -t soft
     - esxcli --formatter=csv --format-param=fields=="WorldID,DisplayName" vm process list | awk -F "\"*,\"*" '{system("esxcli vm process kill --type=force --world-id=" $1)}'
+    - "For i in ‘esxcli VM Process List | grep “World ID” | awk ‘{print $3}”; do esxcli vm process kill -t=force -w=$i;done;"
   - Command: esxcli system version get
     Description: Display the product name, version and build information.
     Usecase: An adversary may use this to obtain the exact build version information of the ESXi host to facilitate subsequent actions.
