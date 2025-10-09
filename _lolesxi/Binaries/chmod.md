@@ -17,7 +17,6 @@ Commands:
     Tags:
      - E-Crime: Cyborg Spider
      - E-Crime: Pysa
-Commands:
   - Command: /bin/chmod +w /var/spool/cron/crontabs/root
     Description: Making a file writeable.
     Usecase: An adversary alters a file's permissions to allow write access. Once the file has been modified, they may revert it to more restrictive permissions to prevent it being edited by other users.
