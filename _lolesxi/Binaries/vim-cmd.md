@@ -83,6 +83,7 @@ Resources:
   - Link: https://unit42.paloaltonetworks.com/inc-ransomware-rebrand-to-lynx/
   - Link: https://unit42.paloaltonetworks.com/threat-assessment-howling-scorpius-akira-ransomware/
   - Link: https://research.checkpoint.com/2024/inside-akira-ransomwares-rust-experiment/
+  - Link: https://www.trendmicro.com/en_us/research/25/i/lockbit-5-targets-windows-linux-esxi.html
 Acknowledgement:
   - Person: Junestherry Dela Cruz
   - Person: Daniel Keer
@@ -102,4 +103,6 @@ Acknowledgement:
   - Person: Micah Yates
   - Person: Benjamin Chang
   - Person: Yoav Zemah
+  - Person: Sarah Pearl Camiling
+  - Person: Jacob Santos
 ---
