@@ -27,6 +27,7 @@ Commands:
     - esxcli vm process kill -w <WID> -t soft
     - esxcli --formatter=csv --format-param=fields=="WorldID,DisplayName" vm process list | awk -F "\"*,\"*" '{system("esxcli vm process kill --type=force --world-id=" $1)}'
     - "For i in ‘esxcli VM Process List | grep “World ID” | awk ‘{print $3}”; do esxcli vm process kill -t=force -w=$i;done;"
+    - esxcli vm process kill --type=force
   - Command: esxcli system version get
     Description: Display the product name, version and build information.
     Usecase: An adversary may use this to obtain the exact build version information of the ESXi host to facilitate subsequent actions.
@@ -162,6 +163,7 @@ Commands:
      - E-Crime: Revil
      - E-Crime: Howling Scorpius
      - E-Crime: Helldown
+     - E-Crime: Kraken
      - APT: UNC3886
 Full_Path:
   - Path: /bin/esxcli
@@ -205,6 +207,7 @@ Resources:
   - Link: https://cloud.google.com/blog/topics/threat-intelligence/vmware-detection-containment-hardening
   - Link: https://unit42.paloaltonetworks.com/threat-assessment-howling-scorpius-akira-ransomware/
   - Link: https://labs.yarix.com/2025/01/zyxel-vulnerability-exploited-by-helldown-ransomware-group/
+  - Link: https://blog.talosintelligence.com/kraken-ransomware-group/
 Acknowledgement:
   - Person: Michael Dawson
   - Person: Junestherry Dela Cruz
@@ -242,4 +245,6 @@ Acknowledgement:
   - Person: Joseph Edwards
   - Person: Yoav Zemah
   - Person: Claudio Vozza
+  - Person: Chetan Raghuprasad
+  - Person: Michael Szeliga
 ---

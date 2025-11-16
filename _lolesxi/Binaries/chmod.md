@@ -26,9 +26,11 @@ Commands:
     OperatingSystem: ESXi
     Tags:
      - E-Crime:  Nevada
+     - E-Crime: Kraken
     ProceduralExamples:
      - /bin/chmod -w /var/spool/cron/crontabs/root
      - chmod +x $CLEAN_DIR/encrypt
+     - chmod +x ./encryptor[.]elf && ./encryptor[.]elf –path  -d -timeout 
 Full_Path:
   - Path: /bin/chmod
   - Path: /sbin/chmod  
@@ -37,7 +39,10 @@ Resources:
   - Link: https://www.reddit.com/r/esxi/comments/10txpje/i_was_attack_by_esxi_ransomware_and_the_attack/
   - Link: https://www.varonis.com/blog/vmware-esxi-in-the-line-of-ransomware-fire
   - Link: https://www.hybrid-analysis.com/sample/be5d2e94c2498ec052fb025e3348085e418c856dd43080501acfe2067ba54c41/6553b8f44c06e50d5408581f
+  - Link: https://blog.talosintelligence.com/kraken-ransomware-group/
 Acknowledgement:
   - Person: Michael Dawson
+  - Person: Chetan Raghuprasad
+  - Person: Michael Szeliga
 
 ---

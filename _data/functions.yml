@@ -123,3 +123,8 @@ tunnel traffic:
   label: Tunnel traffic
   description: |
     Tunnels network traffic for persistence and command and control.
+    
+delete file:
+  label: Delete file
+  description: |
+    Deletes a file from the file system.
