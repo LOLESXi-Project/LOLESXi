@@ -5,17 +5,15 @@ Author: 'Janantha Marasinghe @blueteam0ps_'
 Created: 2025-11-16
 Commands:
   - Command: rm -f "/path/to/directory/*"
-    Description: Force deletes all files from a directory.
+    Description: Force deletes files from a directory.
     Usecase: An adversary deletes logs from an ESXi host to clear traces of their operations.
-    ProcedureExamples: 
-    - rm -f "/var/logs/*"
-    - rm -f "/.ash_history"
     Category: Delete file
     Privileges: Administrator
     MitreID: T1070.004
     OperatingSystem: ESXi
-    Tags:
-     - E-Crime: Kraken
+    ProceduralExamples: | 
+     - rm -f "/var/logs/*"
+	 - rm -f "/.ash_history"
 Full_Path:
   - Path: /sbin/rm
   - Path: /bin/rm
@@ -24,5 +22,4 @@ Resources:
 Acknowledgement:
   - Person: Chetan Raghuprasad
   - Person: Michael Szeliga
-
 ---
