@@ -13,7 +13,7 @@ Commands:
     OperatingSystem: ESXi
     ProceduralExamples: | 
      - rm -f "/var/logs/*"
-	 - rm -f "/.ash_history"
+     - rm -f "/.ash_history"
 Full_Path:
   - Path: /sbin/rm
   - Path: /bin/rm
