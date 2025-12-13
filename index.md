@@ -28,7 +28,7 @@ If you are looking for Windows Binaries, Scripts and Libraries please visit <a h
 Useful Resources
 <br>
 <ul>
-  <li><a href="https://lolbas-project.github.io](https://mikecybersec.notion.site/ESXi-IR-Guide-0ffbcec7272244d6b10dba4f4d16a7c8/">Mike L's ESXi IR Guide</a></li>
+  <li><a href="https://mikecybersec.notion.site/ESXi-IR-Guide-0ffbcec7272244d6b10dba4f4d16a7c8/">Mike L's ESXi IR Guide</a></li>
   <li><a href="https://github.com/AlbinoGazelle/esxi-testing-toolkit">Albino Gazelle's ESXi Testing Toolkit</a></li>
 </ul>
 <br>
