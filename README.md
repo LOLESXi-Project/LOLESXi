@@ -68,6 +68,11 @@ The following folks help maintain the LOLESXi Project on their personal time:
 
 * Wietze Beukema ([@wietze](https://twitter.com/wietze))
 
+## Useful Resources
+
+* [Mike L's ESXi IR Guide](https://mikecybersec.notion.site/ESXi-IR-Guide-0ffbcec7272244d6b10dba4f4d16a7c8)
+* [Albino Gazelle's ESXi Testing Toolkit](https://github.com/AlbinoGazelle/esxi-testing-toolkit)
+
 ## Thanks
 
 As with many open-source projects, this one is the product of a community and we would like to thank ours:
