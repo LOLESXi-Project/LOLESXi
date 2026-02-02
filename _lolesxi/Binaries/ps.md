@@ -1,6 +1,6 @@
 ---
 Name: ps
-Description: List process information from a ESXi host.
+Description: List process information from an ESXi host.
 Author: 'Janantha Marasinghe @blueteam0ps_'
 Created: 2026-02-02
 Commands:
