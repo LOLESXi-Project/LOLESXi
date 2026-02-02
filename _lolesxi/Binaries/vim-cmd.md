@@ -84,6 +84,7 @@ Resources:
   - Link: https://unit42.paloaltonetworks.com/threat-assessment-howling-scorpius-akira-ransomware/
   - Link: https://research.checkpoint.com/2024/inside-akira-ransomwares-rust-experiment/
   - Link: https://www.trendmicro.com/en_us/research/25/i/lockbit-5-targets-windows-linux-esxi.html
+  - Link: https://www.levelblue.com/blogs/spiderlabs-blog/19-shades-of-lockbit5.0-inside-the-latest-cross-platform-ransomware-part-1
 Acknowledgement:
   - Person: Junestherry Dela Cruz
   - Person: Daniel Keer
@@ -105,4 +106,7 @@ Acknowledgement:
   - Person: Yoav Zemah
   - Person: Sarah Pearl Camiling
   - Person: Jacob Santos
+  - Person: Mark Tsipershtein
+  - Person: Evgeny Ananin
+  - Person: Nikita Kazymirskyi
 ---
