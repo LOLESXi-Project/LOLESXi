@@ -68,6 +68,15 @@ Commands:
     - /bin/sh -c “for vmid in $(vim-cmd vmsvc/getallvms | grep -v Vmid | awk '{print $1}'); do vim-cmd vmsvc/power.off $vmid; done"
     - for i in $(vim-cmd vmsvc/getallvms | awk '{print $1}' | grep -Eo '[0-9]{1,5}'); do vim-cmd vmsvc/power.off $i; vim-cmd vmsvc/snapshot.removeall $i; done;
     - vim-cmd vmsvc/getallvms | tail -n +2 | awk '{system("vim-cmd vmsvc/power.off " $1)}
+  - Command: vmsvc/power.getstate
+    Description: Gets the power state of a Virtual Machine
+    Usecase: Obtains the power state of a virtual machine. This is used to before powering off targeted VMs.
+    Category: Power off VM
+    Privileges: Administrator
+    MitreID: T1529
+    OperatingSystem: ESXi
+    ProceduralExamples:
+     - vmsvc/power.getstate %d
 Full_Path:
   - Path: /sbin/vim-cmd
   - Path: /bin/vim-cmd
