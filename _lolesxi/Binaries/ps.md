@@ -7,7 +7,7 @@ Commands:
   - Command: ps | grep vmx | grep "%s" | grep -v grep | awk '{print $2}' | sort -u
     Description: Gets a list of VM guest processes.
     Usecase: An adversary obtains list of all running processes and filters it to only get those related to guest VMs.
-    Category: Stop Service
+    Category: Lists VMs
     Privileges: Administrator
     MitreID: T1082
     OperatingSystem: ESXi
