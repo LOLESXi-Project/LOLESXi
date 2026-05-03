@@ -13,13 +13,23 @@ Commands:
     OperatingSystem: ESXi
   - Command: vim-cmd hostsvc/autostartmanager/enable_autostart false
     Description: Disable autostart of Virtual Machines
-    Usecase: Disabling autostart of Virtual Machines prevents them from starting post reboot of a ESXi host.
+    Usecase: Disabling autostart of Virtual Machines prevents them from starting post reboot of an ESXi host.
     Category: Disable Startup
     Privileges: Administrator
     MitreID: T1529
     OperatingSystem: ESXi
     ProceduralExamples: 
      - vim-cmd hostsvc/autostartmanager/enable_autostart 0
+     - vim-cmd hostsvc/autostartmanager/enable_autostart 0 > /dev/null 2>&1
+  - Command: vim-cmd hostsvc/autostartmanager/clear_autostart
+    Description: Clear Autostart configuration completely
+    Usecase: Clears Autostart configuration of the entire ESXi host.
+    Category: Disable Startup
+    Privileges: Administrator
+    MitreID: T1529
+    OperatingSystem: ESXi
+    ProceduralExamples: 
+     - vim-cmd hostsvc/autostartmanager/clear_autostart > /dev/null 2>&1
   - Command: vim-cmd hostsvc/hostsummary | grep cpuModel 
     Description: Displays summary of system information about the ESXi host
     Usecase: Shows the exact cpuModel from the hostsummary output
@@ -35,9 +45,10 @@ Commands:
     MitreID: T1082 
     OperatingSystem: ESXi
     ProceduralExamples: 
-    - /bin/sh -c “for vmid in $(vim-cmd vmsvc/getallvms | grep -v Vmid | awk '{print $1}'); do vim-cmd vmsvc/power.off $vmid; done"
-    - for i in $(vim-cmd vmsvc/getallvms | awk '{print $1}' | grep -Eo '[0-9]{1,5}'); do vim-cmd vmsvc/power.off $i; vim-cmd vmsvc/snapshot.removeall $i; done;
-    - vim-cmd vmsvc/getallvms | tail -n +2 | awk '{system("vim-cmd vmsvc/power.off " $1)}
+     - /bin/sh -c “for vmid in $(vim-cmd vmsvc/getallvms | grep -v Vmid | awk '{print $1}'); do vim-cmd vmsvc/power.off $vmid; done"
+     - for i in $(vim-cmd vmsvc/getallvms | awk '{print $1}' | grep -Eo '[0-9]{1,5}'); do vim-cmd vmsvc/power.off $i; vim-cmd vmsvc/snapshot.removeall $i; done;
+     - vim-cmd vmsvc/getallvms | tail -n +2 | awk '{system("vim-cmd vmsvc/power.off " $1)}
+     - vim-cmd vmsvc/getallvms | tail -n +2
   - Command: vim-cmd vmsvc/snapshot.removeall
     Description: Remove VM Snapshots
     Usecase: Deletes all snapshots of all Virtual Machines. This activity is usually observed near ransomware deployment and is often executed programatically.
@@ -64,10 +75,11 @@ Commands:
      - E-Crime: Lynx
      - E-Crime: Howling Scorpius
     ProceduralExamples:
-    - vim-cmd vmsvc/getallvms | grep -o -E \'^[0-9]+\' | xargs -r -n 1 vim-cmd vmsvc/power.off
-    - /bin/sh -c “for vmid in $(vim-cmd vmsvc/getallvms | grep -v Vmid | awk '{print $1}'); do vim-cmd vmsvc/power.off $vmid; done"
-    - for i in $(vim-cmd vmsvc/getallvms | awk '{print $1}' | grep -Eo '[0-9]{1,5}'); do vim-cmd vmsvc/power.off $i; vim-cmd vmsvc/snapshot.removeall $i; done;
-    - vim-cmd vmsvc/getallvms | tail -n +2 | awk '{system("vim-cmd vmsvc/power.off " $1)}
+     - vim-cmd vmsvc/getallvms | grep -o -E \'^[0-9]+\' | xargs -r -n 1 vim-cmd vmsvc/power.off
+     - /bin/sh -c “for vmid in $(vim-cmd vmsvc/getallvms | grep -v Vmid | awk '{print $1}'); do vim-cmd vmsvc/power.off $vmid; done"
+     - for i in $(vim-cmd vmsvc/getallvms | awk '{print $1}' | grep -Eo '[0-9]{1,5}'); do vim-cmd vmsvc/power.off $i; vim-cmd vmsvc/snapshot.removeall $i; done;
+     - vim-cmd vmsvc/getallvms | tail -n +2 | awk '{system("vim-cmd vmsvc/power.off " $1)}
+     - vim-cmd vmsvc/power.off <vmid> > /dev/null 2>&1
   - Command: vmsvc/power.getstate
     Description: Gets the power state of a Virtual Machine
     Usecase: Obtains the power state of a virtual machine. This is used to before powering off targeted VMs.
@@ -94,6 +106,7 @@ Resources:
   - Link: https://research.checkpoint.com/2024/inside-akira-ransomwares-rust-experiment/
   - Link: https://www.trendmicro.com/en_us/research/25/i/lockbit-5-targets-windows-linux-esxi.html
   - Link: https://www.levelblue.com/blogs/spiderlabs-blog/19-shades-of-lockbit5.0-inside-the-latest-cross-platform-ransomware-part-1
+  - Link: https://research.checkpoint.com/2026/dfir-report-the-gentlemen/
 Acknowledgement:
   - Person: Junestherry Dela Cruz
   - Person: Daniel Keer
