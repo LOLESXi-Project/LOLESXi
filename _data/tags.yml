@@ -21,5 +21,6 @@ E-Crime:
   Howling Scorpius: 'Attributed to be behind Akira RaaS which targets SMBs in North America, Europe and Australia, across various sectors'
   Helldown: 'Helldown ransomware targets Windows and Linux systems, particularly VMware infrastructures. Its focus is on organisations in sectors such as IT, healthcare, telecommunications and manufacturing.'
   Kraken: 'A suspected Russian speaking e-crime group who shares common attributes to the group behind HelloKitty ransomware'
+  Vect: 'Vect is a newly emerged ransomware-as-a-service (started off in December 2025) gang recruiting affiliates.'
 APT: 
   UNC3886: 'A suspected Chinese threat actor who has used sophisticated and novel techniques during ESXi intrusions'
