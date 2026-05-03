@@ -13,15 +13,19 @@ Commands:
     OperatingSystem: ESXi  
     Tags:
      - E-Crime: Qilin
+     - E-Crime: The Gentlemen
     ProceduralExamples:
      - for I in $(esxcli storage filesystem list |grep 'VMFS-5' |awk '{print $1}'); do vmkfstools -c 10M -d eagerzeroedthick $I/eztDisk > /dev/null; vmkfstools -U $I/eztDisk > /dev/null; done
      - for I in $(esxcli storage filesystem list |grep 'VMFS-6' |awk '{print $1}'); do vmkfstools -c 10M -d eagerzeroedthick $I/eztDisk > /dev/null; vmkfstools -U $I/eztDisk > /dev/null; done
+     - for I in $(esxcli storage filesystem list | grep 'VMFS-5' | awk '{print $1}'); do \\ vmkfstools -c 10M -d eagerzeroedthick $I/eztDisk > /dev/null 2>&1; \\ vmkfstools -U $I/eztDisk > /dev/null 2>&1; \\ done 2>&1
+     - for I in $(esxcli storage filesystem list | grep 'VMFS-6' | awk '{print $1}'); do \\ vmkfstools -c 10M -d eagerzeroedthick $I/eztDisk > /dev/null 2>&1; \\ vmkfstools -U $I/eztDisk > /dev/null 2>&1; \\ done 2>&1
 Full_Path:
   - Path: /sbin/vmkfstools
   - Path: /bin/vmkfstools
 Resources:
   - Link: https://www.bleepingcomputer.com/news/security/linux-version-of-qilin-ransomware-focuses-on-vmware-esxi/
   - Link: https://www.shadowstackre.com/analysis/qilin
+  - Link: https://research.checkpoint.com/2026/dfir-report-the-gentlemen/
 Acknowledgement:
   - Person: Lawrence Abrams
   - Person: MalwareHunterTeam
