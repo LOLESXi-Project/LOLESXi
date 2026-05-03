@@ -223,6 +223,7 @@ Resources:
   - Link: https://blog.talosintelligence.com/kraken-ransomware-group/
   - Link: https://research.checkpoint.com/2026/vect-ransomware-by-design-wiper-by-accident/
   - Link: https://research.checkpoint.com/2026/dfir-report-the-gentlemen/
+  - Link: https://www.rapid7.com/blog/post/tr-kyber-ransomware-double-trouble-windows-esxi-attacks-explained/
 Acknowledgement:
   - Person: Michael Dawson
   - Person: Junestherry Dela Cruz
