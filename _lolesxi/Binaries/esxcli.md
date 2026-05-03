@@ -83,6 +83,16 @@ Commands:
     OperatingSystem: ESXi
     ProceduralExamples:
       - esxcli network firewall set -d true
+      - esxcli network firewall set --enabled false 2>/dev/null
+  - Command: esxcli network firewall ruleset set --enabled fals
+    Description: Disables a specific firewall rule set.
+    Usecase: An adversary disables a specific firewall ruleset.
+    Category: modify service
+    Privileges: Administrator
+    MitreID: T1562.004
+    OperatingSystem: ESXi
+    ProceduralExamples:
+      - esxcli network firewall ruleset set --enabled false --rule-id sshServer 2>/dev/null
   - Command: esxcli vsan debug vmdk list
     Description: List the status of VMDKs in vSAN.
     Usecase: An adversary carries out enumeration of storage.
@@ -164,6 +174,7 @@ Commands:
      - E-Crime: Howling Scorpius
      - E-Crime: Helldown
      - E-Crime: Kraken
+     - E-Crime: Vect
      - APT: UNC3886
 Full_Path:
   - Path: /bin/esxcli
@@ -208,6 +219,7 @@ Resources:
   - Link: https://unit42.paloaltonetworks.com/threat-assessment-howling-scorpius-akira-ransomware/
   - Link: https://labs.yarix.com/2025/01/zyxel-vulnerability-exploited-by-helldown-ransomware-group/
   - Link: https://blog.talosintelligence.com/kraken-ransomware-group/
+  - Link: https://research.checkpoint.com/2026/vect-ransomware-by-design-wiper-by-accident/
 Acknowledgement:
   - Person: Michael Dawson
   - Person: Junestherry Dela Cruz
