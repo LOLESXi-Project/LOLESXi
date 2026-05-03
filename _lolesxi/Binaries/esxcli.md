@@ -28,6 +28,7 @@ Commands:
     - esxcli --formatter=csv --format-param=fields=="WorldID,DisplayName" vm process list | awk -F "\"*,\"*" '{system("esxcli vm process kill --type=force --world-id=" $1)}'
     - "For i in ‘esxcli VM Process List | grep “World ID” | awk ‘{print $3}”; do esxcli vm process kill -t=force -w=$i;done;"
     - esxcli vm process kill --type=force
+    - esxcli vm process kill --type=force --world-id=<world_id> > /dev/null 2>&1
   - Command: esxcli system version get
     Description: Display the product name, version and build information.
     Usecase: An adversary may use this to obtain the exact build version information of the ESXi host to facilitate subsequent actions.
@@ -175,6 +176,7 @@ Commands:
      - E-Crime: Helldown
      - E-Crime: Kraken
      - E-Crime: Vect
+     - E-Crime: The Gentlemen
      - APT: UNC3886
 Full_Path:
   - Path: /bin/esxcli
@@ -220,6 +222,7 @@ Resources:
   - Link: https://labs.yarix.com/2025/01/zyxel-vulnerability-exploited-by-helldown-ransomware-group/
   - Link: https://blog.talosintelligence.com/kraken-ransomware-group/
   - Link: https://research.checkpoint.com/2026/vect-ransomware-by-design-wiper-by-accident/
+  - Link: https://research.checkpoint.com/2026/dfir-report-the-gentlemen/
 Acknowledgement:
   - Person: Michael Dawson
   - Person: Junestherry Dela Cruz
