@@ -23,5 +23,6 @@ E-Crime:
   Kraken: 'A suspected Russian speaking e-crime group who shares common attributes to the group behind HelloKitty ransomware'
   Vect: 'Vect is a newly emerged ransomware-as-a-service (started off in December 2025) gang recruiting affiliates.'
   The Gentlemen: 'The Gentlemen is a rapidly scaling ransomware-as-a-service group that leverages a lucrative affiliate model and multi-platform ransomware (including ESXi) to carry out fast, large-scale double-extortion attacks against enterprise targets worldwide.'
+  INC: 'A RaaS group who emerged in 2023 and uses an affiliate model for engagement.'
 APT: 
   UNC3886: 'A suspected Chinese threat actor who has used sophisticated and novel techniques during ESXi intrusions'

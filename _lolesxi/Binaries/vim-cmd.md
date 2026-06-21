@@ -74,6 +74,7 @@ Commands:
      - E-Crime: Play
      - E-Crime: Lynx
      - E-Crime: Howling Scorpius
+     - E-Crime: INC
     ProceduralExamples:
      - vim-cmd vmsvc/getallvms | grep -o -E \'^[0-9]+\' | xargs -r -n 1 vim-cmd vmsvc/power.off
      - /bin/sh -c “for vmid in $(vim-cmd vmsvc/getallvms | grep -v Vmid | awk '{print $1}'); do vim-cmd vmsvc/power.off $vmid; done"
@@ -107,6 +108,7 @@ Resources:
   - Link: https://www.trendmicro.com/en_us/research/25/i/lockbit-5-targets-windows-linux-esxi.html
   - Link: https://www.levelblue.com/blogs/spiderlabs-blog/19-shades-of-lockbit5.0-inside-the-latest-cross-platform-ransomware-part-1
   - Link: https://research.checkpoint.com/2026/dfir-report-the-gentlemen/
+  - Link: https://hybrid-analysis.com/sample/6cd349eda0fa6c8b274a0920852c68f8b727afea1fdbc69ad183cef05d9cf141?environmentId=310
 Acknowledgement:
   - Person: Junestherry Dela Cruz
   - Person: Daniel Keer
