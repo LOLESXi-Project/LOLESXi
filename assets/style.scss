@@ -5,6 +5,11 @@ $accent: #096280;
 $lighter: rgba($accent, 0.1);
 $hover: $accent;
 
+$dark-bg: #0d1117;
+$dark-text: #e6edf3;
+$dark-surface: #161b22;
+$dark-border: #30363d;
+$dark-code: #c9d1d9;
 
 // layout
 
@@ -65,7 +70,7 @@ $layout-break: "(min-width: #{$column-width + $grace-space})";
     h2.function-name {
         margin-top: 1em !important;
         padding-top: 1em;
-        border-top: 1px dotted black;
+        border-top: 1px dotted currentColor;
     }
 }
 
@@ -74,6 +79,8 @@ $layout-break: "(min-width: #{$column-width + $grace-space})";
 body {
     font-family: sans, sans-serif;
     word-break: break-word;
+    background: white;
+    color: black;
 }
 
 code {
@@ -388,4 +395,75 @@ dl.row>dd {
 
 dl { /* Required for Chrome, default in Firefox */
     margin: 0;
+}
+
+#theme-toggle {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    z-index: 1000;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background: white;
+    color: black;
+
+    cursor: pointer;
+    font-size: 18px;
+}
+
+[data-theme="dark"] body {
+    background: $dark-bg;
+    color: $dark-text;
+}
+
+[data-theme="dark"] #theme-toggle {
+    background: $dark-surface;
+    color: $dark-text;
+    border-color: $dark-border;
+}
+
+[data-theme="dark"] code {
+    color: $dark-code;
+    background: $dark-surface;
+}
+
+[data-theme="dark"] pre {
+    background: $dark-surface;
+}
+
+[data-theme="dark"] a:link,
+[data-theme="dark"] a:visited {
+    color: #58a6ff;
+}
+
+[data-theme="dark"] a:hover {
+    color: #79c0ff;
+}
+
+[data-theme="dark"] #bin-table tbody tr:hover {
+    background: $dark-surface;
+}
+
+[data-theme="dark"] .function-list div,
+[data-theme="dark"] #contributors > div {
+    border-color: #58a6ff;
+}
+
+[data-theme="dark"] .tag {
+    background-color: #58a6ff;
+    color: #0d1117;
+}
+
+[data-theme="dark"] .tag .tag-tooltip {
+    background-color: $dark-surface;
+    color: $dark-text;
+    border-color: #58a6ff;
+}
+
+[data-theme="dark"] h2.function-name {
+    border-top-color: $dark-border;
 }
