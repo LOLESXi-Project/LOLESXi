@@ -1,6 +1,6 @@
 ---
 layout: default
-title: LOLESXi Threat Graph
+title: Threat Graph
 permalink: /threat-graph/
 ---
 
@@ -9,11 +9,10 @@ permalink: /threat-graph/
 <div class="graph-page">
   <header class="graph-header">
     <div>
-      <h1>LOLESXi Threat Graph</h1>
+      <h1>LOLESXi Threat Procedure Graph</h1>
       <p>
-        Exploded relationship view connecting tag-derived threat groups,
-        ESXi-native procedures, binaries/scripts, ATT&amp;CK techniques, detections,
-        and source reporting.
+        Relationship view connecting tag-derived threat groups, ESXi-native binaries,
+        procedures, ATT&amp;CK techniques, detections, and source reporting.
       </p>
     </div>
 
@@ -26,91 +25,38 @@ permalink: /threat-graph/
   <main class="graph-app">
     <aside class="graph-sidebar">
       <div class="metric-grid">
-        <div class="metric">
-          <strong id="metric-nodes">0</strong>
-          <span>nodes</span>
-        </div>
-        <div class="metric">
-          <strong id="metric-edges">0</strong>
-          <span>relationships</span>
-        </div>
-        <div class="metric">
-          <strong id="metric-procedures">0</strong>
-          <span>procedures</span>
-        </div>
-        <div class="metric">
-          <strong id="metric-binaries">0</strong>
-          <span>binaries/scripts</span>
-        </div>
+        <div class="metric"><strong id="metric-nodes">0</strong><span>nodes</span></div>
+        <div class="metric"><strong id="metric-edges">0</strong><span>relationships</span></div>
+        <div class="metric"><strong id="metric-procedures">0</strong><span>procedures</span></div>
+        <div class="metric"><strong id="metric-binaries">0</strong><span>binaries/scripts</span></div>
       </div>
 
       <div class="filter-group">
         <p class="panel-title">Views</p>
-
-        <button id="view-overview">
-          Exploded overview
-          <span>Reset to all threat groups and node types</span>
-        </button>
-
-        <button id="view-esxcli">
-          Focus: esxcli
-          <span>Show known abuse paths using esxcli</span>
-        </button>
-
-        <button id="view-vim-cmd">
-          Focus: vim-cmd
-          <span>Show known abuse paths using vim-cmd</span>
-        </button>
+        <button id="view-overview">Threat group overview<span>Threat groups connected to tagged LOLESXi binaries</span></button>
+        <button id="view-procedure-map">Procedure map<span>Show procedures, ATT&amp;CK, detections and sources</span></button>
+        <button id="view-esxcli">Focus: esxcli<span>Show relationships around esxcli</span></button>
+        <button id="view-vim-cmd">Focus: vim-cmd<span>Show relationships around vim-cmd</span></button>
       </div>
 
       <div class="filter-group">
         <p class="panel-title">Threat Group</p>
-
         <div class="actor-filter-actions">
           <button id="select-all-actors">Select all</button>
           <button id="clear-all-actors">Clear all</button>
         </div>
-
         <div id="actor-filter-list" class="actor-filter-list"></div>
       </div>
 
       <div class="filter-group">
         <p class="panel-title">Node types</p>
-
-        <label>
-          <input type="checkbox" checked data-type="actor">
-          Threat actors
-        </label>
-
-        <label>
-          <input type="checkbox" checked data-type="malware">
-          Malware / ransomware / e-crime
-        </label>
-
-        <label>
-          <input type="checkbox" checked data-type="procedure">
-          ESXi procedures
-        </label>
-
-        <label>
-          <input type="checkbox" checked data-type="binary">
-          Native binaries/scripts
-        </label>
-
-        <label>
-          <input type="checkbox" checked data-type="technique">
-          ATT&amp;CK techniques
-        </label>
-
-        <label>
-          <input type="checkbox" checked data-type="detection">
-          Detections
-        </label>
-
-        <label>
-          <input type="checkbox" checked data-type="source">
-          Sources
-        </label>
+        <label><input type="checkbox" checked data-type="actor"> Threat actors</label>
+        <label><input type="checkbox" checked data-type="malware"> Malware / ransomware / e-crime</label>
+        <label><input type="checkbox" checked data-type="binary"> Native binaries/scripts</label>
+        <label><input type="checkbox" data-type="procedure"> ESXi procedures</label>
+        <label><input type="checkbox" data-type="technique"> ATT&amp;CK techniques</label>
+        <label><input type="checkbox" data-type="detection"> Detections</label>
+        <label><input type="checkbox" data-type="source"> Sources</label>
       </div>
 
       <div class="filter-group">
@@ -128,12 +74,11 @@ permalink: /threat-graph/
 
       <div class="filter-group">
         <p class="panel-title">Legend</p>
-
         <div class="legend">
           <span><i class="dot actor"></i> Threat Group</span>
-          <span><i class="dot malware"></i> E-crime / ransomware / malware tag</span>
-          <span><i class="dot procedure"></i> ESXi procedure</span>
+          <span><i class="dot malware"></i> E-crime / ransomware / malware</span>
           <span><i class="dot binary"></i> Native binary/script</span>
+          <span><i class="dot procedure"></i> ESXi procedure</span>
           <span><i class="dot technique"></i> ATT&amp;CK technique</span>
           <span><i class="dot detection"></i> Detection</span>
           <span><i class="dot source"></i> Source</span>
@@ -143,14 +88,9 @@ permalink: /threat-graph/
 
     <section class="graph-canvas-wrap">
       <div id="lolesxi-threat-graph"></div>
-
       <div class="graph-caption">
-        <div>
-          Flow: tag-derived threat group → procedure → binary / technique / detection / source
-        </div>
-        <div>
-          Use for CTI triage, ATT&amp;CK mapping, and LOLESXi procedure analysis
-        </div>
+        <div>Default flow: threat group tag → binary entry → procedures</div>
+        <div>Use Procedure map to expand ATT&amp;CK, detections and sources</div>
       </div>
     </section>
 
@@ -159,8 +99,8 @@ permalink: /threat-graph/
         <span class="node-type">Selected node</span>
         <h2>Click a node</h2>
         <p>
-          Select a tag-derived threat group, ESXi procedure, binary, ATT&amp;CK
-          technique, detection, or source to inspect its relationships.
+          Select a tag-derived threat group, LOLESXi binary, procedure, ATT&amp;CK
+          technique, detection, or source to inspect relationships.
         </p>
       </div>
     </section>
