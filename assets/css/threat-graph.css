@@ -1,9 +1,7 @@
 :root {
   --tg-bg: #000000;
   --tg-panel: #0a0a0a;
-  --tg-panel-2: #101010;
   --tg-card: #141414;
-  --tg-card-2: #1a1a1a;
   --tg-text: #eeeeee;
   --tg-muted: #a3a3a3;
   --tg-faint: #737373;
@@ -20,10 +18,16 @@
   --tg-source: #023047;
 }
 
+/* Break out of the normal Jekyll content column for higher-resolution graph rendering */
 .graph-page {
   background: #000000;
   color: var(--tg-text);
   min-height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  overflow: hidden;
 }
 
 .graph-header {
@@ -31,7 +35,7 @@
   justify-content: space-between;
   gap: 22px;
   align-items: center;
-  padding: 22px 26px;
+  padding: 18px 26px;
   border-bottom: 1px solid var(--tg-border);
   background: #000000;
 }
@@ -47,7 +51,7 @@
   margin: 0;
   color: var(--tg-muted);
   font-size: 14px;
-  max-width: 980px;
+  max-width: 1100px;
 }
 
 .graph-status {
@@ -72,22 +76,15 @@
 }
 
 @keyframes tgStatusPulse {
-  0%, 100% {
-    box-shadow: 0 0 0 4px rgba(255, 183, 3, 0.12);
-    opacity: 0.72;
-  }
-
-  50% {
-    box-shadow: 0 0 0 9px rgba(255, 183, 3, 0.28);
-    opacity: 1;
-  }
+  0%, 100% { box-shadow: 0 0 0 4px rgba(255, 183, 3, 0.12); opacity: 0.72; }
+  50% { box-shadow: 0 0 0 9px rgba(255, 183, 3, 0.28); opacity: 1; }
 }
 
 .graph-app {
   display: grid;
-  grid-template-columns: 320px minmax(760px, 1fr) 380px;
-  height: calc(100vh - 86px);
-  min-height: 780px;
+  grid-template-columns: minmax(300px, 18vw) minmax(920px, 1fr) minmax(340px, 20vw);
+  height: calc(100vh - 74px);
+  min-height: 820px;
 }
 
 .graph-sidebar,
@@ -97,13 +94,8 @@
   overflow: auto;
 }
 
-.graph-sidebar {
-  border-right: 1px solid var(--tg-border);
-}
-
-.graph-details {
-  border-left: 1px solid var(--tg-border);
-}
+.graph-sidebar { border-right: 1px solid var(--tg-border); }
+.graph-details { border-left: 1px solid var(--tg-border); }
 
 .graph-canvas-wrap {
   position: relative;
@@ -114,7 +106,9 @@
 #lolesxi-threat-graph {
   width: 100%;
   height: 100%;
+  min-height: 820px;
   background: #000000;
+  image-rendering: auto;
 }
 
 .graph-caption {
@@ -130,7 +124,7 @@
 
 .graph-caption div {
   border: 1px solid var(--tg-border);
-  background: rgba(10, 10, 10, 0.9);
+  background: rgba(10, 10, 10, 0.92);
   border-radius: 16px;
   padding: 10px 12px;
   color: var(--tg-muted);
@@ -144,11 +138,16 @@
   margin-bottom: 18px;
 }
 
-.metric {
+.metric,
+.filter-group,
+.detail-card {
   border: 1px solid var(--tg-border);
+  background: var(--tg-card);
+}
+
+.metric {
   border-radius: 16px;
   padding: 12px;
-  background: #111111;
 }
 
 .metric strong {
@@ -167,9 +166,7 @@
 .detail-card {
   margin-bottom: 18px;
   padding: 15px;
-  border: 1px solid var(--tg-border);
   border-radius: 18px;
-  background: var(--tg-card);
 }
 
 .panel-title {
@@ -194,9 +191,7 @@
   text-align: left;
 }
 
-.graph-sidebar button:hover {
-  border-color: var(--tg-accent);
-}
+.graph-sidebar button:hover { border-color: var(--tg-accent); }
 
 .graph-sidebar button span {
   display: block;
@@ -220,7 +215,7 @@
 
 .actor-filter-list {
   margin-top: 12px;
-  max-height: 260px;
+  max-height: 320px;
   overflow: auto;
   padding-right: 4px;
 }
@@ -280,14 +275,8 @@
   clip-path: polygon(14% 44%, 0 65%, 44% 100%, 100% 18%, 80% 0%, 39% 62%);
 }
 
-.graph-sidebar input[type="checkbox"]:checked::before {
-  transform: scale(1);
-}
-
-.graph-sidebar input[type="checkbox"]:focus {
-  outline: 2px solid var(--tg-accent);
-  outline-offset: 2px;
-}
+.graph-sidebar input[type="checkbox"]:checked::before { transform: scale(1); }
+.graph-sidebar input[type="checkbox"]:focus { outline: 2px solid var(--tg-accent); outline-offset: 2px; }
 
 .tag-prefix-list {
   display: flex;
@@ -319,23 +308,14 @@
   color: var(--tg-muted);
 }
 
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
+.dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
 .dot.actor { background: var(--tg-actor); }
 .dot.malware { background: var(--tg-malware); }
 .dot.procedure { background: var(--tg-procedure); }
 .dot.binary { background: var(--tg-binary); }
 .dot.technique { background: var(--tg-technique); }
 .dot.detection { background: var(--tg-detection); }
-.dot.source {
-  background: var(--tg-source);
-  border: 1px solid var(--tg-procedure);
-}
+.dot.source { background: var(--tg-source); border: 1px solid var(--tg-procedure); }
 
 .node-type {
   display: inline-flex;
@@ -348,17 +328,8 @@
   text-transform: capitalize;
 }
 
-.graph-details h2 {
-  margin: 0 0 8px;
-  font-size: 21px;
-  color: var(--tg-text);
-}
-
-.graph-details p {
-  color: var(--tg-muted);
-  line-height: 1.55;
-  font-size: 14px;
-}
+.graph-details h2 { margin: 0 0 8px; font-size: 21px; color: var(--tg-text); }
+.graph-details p { color: var(--tg-muted); line-height: 1.55; font-size: 14px; }
 
 .kv {
   display: grid;
@@ -368,14 +339,8 @@
   font-size: 14px;
 }
 
-.kv strong {
-  color: var(--tg-muted);
-}
-
-.kv span {
-  color: var(--tg-text);
-  word-break: break-word;
-}
+.kv strong { color: var(--tg-muted); }
+.kv span { color: var(--tg-text); word-break: break-word; }
 
 .pill {
   display: inline-block;
@@ -410,34 +375,28 @@
   text-decoration: none;
 }
 
-.empty-state {
-  color: var(--tg-muted);
-  font-size: 13px;
-  line-height: 1.5;
-}
+.empty-state { color: var(--tg-muted); font-size: 13px; line-height: 1.5; }
 
-@media (max-width: 1150px) {
-  .graph-header {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
+@media (max-width: 1250px) {
   .graph-app {
-    grid-template-columns: 1fr;
+    grid-template-columns: 300px minmax(680px, 1fr);
     height: auto;
   }
 
-  #lolesxi-threat-graph {
-    height: 760px;
-  }
-
-  .graph-sidebar,
   .graph-details {
-    border: none;
-    border-bottom: 1px solid var(--tg-border);
+    grid-column: 1 / -1;
+    border-left: 0;
+    border-top: 1px solid var(--tg-border);
   }
 
-  .graph-caption {
-    flex-direction: column;
+  #lolesxi-threat-graph {
+    height: 820px;
   }
+}
+
+@media (max-width: 900px) {
+  .graph-header { align-items: flex-start; flex-direction: column; }
+  .graph-app { grid-template-columns: 1fr; }
+  .graph-sidebar, .graph-details { border: none; border-bottom: 1px solid var(--tg-border); }
+  .graph-caption { flex-direction: column; }
 }
