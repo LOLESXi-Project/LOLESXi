@@ -1,11 +1,10 @@
 ---
 layout: default
-title: Threat Graph
+title: ESXi Threat Graph
 permalink: /threat-graph/
 ---
 
 <link rel="stylesheet" href="{{ '/assets/css/threat-graph.css' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/threat-graph-page-overrides.css' | relative_url }}">
 
 <div class="graph-page">
   <header class="graph-header">
@@ -39,6 +38,7 @@ permalink: /threat-graph/
 
       <div class="filter-group">
         <p class="panel-title">Views</p>
+
         <button id="view-overview">
           Threat group overview
           <span>Threat groups connected to tagged LOLESXi binaries</span>
@@ -74,40 +74,13 @@ permalink: /threat-graph/
       <div class="filter-group">
         <p class="panel-title">Node types</p>
 
-        <label>
-          <input type="checkbox" checked data-type="actor">
-          Threat actors
-        </label>
-
-        <label>
-          <input type="checkbox" checked data-type="malware">
-          Malware / ransomware / e-crime
-        </label>
-
-        <label>
-          <input type="checkbox" checked data-type="binary">
-          Native binaries/scripts
-        </label>
-
-        <label>
-          <input type="checkbox" checked data-type="procedure">
-          ESXi procedures
-        </label>
-
-        <label>
-          <input type="checkbox" checked data-type="technique">
-          ATT&amp;CK techniques
-        </label>
-
-        <label>
-          <input type="checkbox" checked data-type="detection">
-          Detections
-        </label>
-
-        <label>
-          <input type="checkbox" checked data-type="source">
-          Sources
-        </label>
+        <label><input type="checkbox" checked data-type="actor"> Threat actors</label>
+        <label><input type="checkbox" checked data-type="malware"> Malware / ransomware / e-crime</label>
+        <label><input type="checkbox" checked data-type="binary"> Native binaries/scripts</label>
+        <label><input type="checkbox" checked data-type="procedure"> ESXi procedures</label>
+        <label><input type="checkbox" checked data-type="technique"> ATT&amp;CK techniques</label>
+        <label><input type="checkbox" checked data-type="detection"> Detections</label>
+        <label><input type="checkbox" checked data-type="source"> Sources</label>
       </div>
 
       <div class="filter-group">
@@ -143,12 +116,8 @@ permalink: /threat-graph/
       <div id="lolesxi-threat-graph"></div>
 
       <div class="graph-caption">
-        <div>
-          Default flow: threat group tag → binary → procedure → ATT&amp;CK / detection / source
-        </div>
-        <div>
-          Procedure map loads by default
-        </div>
+        <div>Default flow: threat group tag → binary → procedure → ATT&amp;CK / detection / source</div>
+        <div>Procedure map loads by default</div>
       </div>
     </section>
 
@@ -165,4 +134,3 @@ permalink: /threat-graph/
 <script src="https://unpkg.com/cytoscape@3.28.1/dist/cytoscape.min.js"></script>
 <script src="{{ '/assets/js/threat-graph-data.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/threat-graph.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/threat-graph-default-procedure-map.js' | relative_url }}"></script>
