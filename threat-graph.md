@@ -1,6 +1,6 @@
 ---
 layout: default
-title: ESXi Threat Graph
+title: Threat Procedure Graph
 permalink: /threat-graph/
 ---
 
@@ -9,17 +9,10 @@ permalink: /threat-graph/
 <div class="graph-page">
   <header class="graph-header">
     <div>
-      <h1>LOLESXi Threat Procedure Graph</h1>
-      <p>
-        Relationship view connecting tag-derived threat groups, ESXi-native binaries,
-        procedures, ATT&amp;CK techniques, detections, and source reporting.
-      </p>
+      <h1>LOLESXi Threa Graph</h1>
+      <p>Relationship view connecting tag-derived threat groups, ESXi-native binaries, procedures, ATT&amp;CK techniques, detections, and source reporting.</p>
     </div>
-
-    <div class="graph-status">
-      <span class="pulse"></span>
-      Custom palette threat group view
-    </div>
+    <div class="graph-status"><span class="pulse"></span>Runtime API threat group view</div>
   </header>
 
   <main class="graph-app">
@@ -29,6 +22,11 @@ permalink: /threat-graph/
         <div class="metric"><strong id="metric-edges">0</strong><span>relationships</span></div>
         <div class="metric"><strong id="metric-procedures">0</strong><span>procedures</span></div>
         <div class="metric"><strong id="metric-binaries">0</strong><span>binaries/scripts</span></div>
+      </div>
+
+      <div class="filter-group" id="graph-loading">
+        <p class="panel-title">Status</p>
+        <p class="empty-state">Loading LOLESXi API data…</p>
       </div>
 
       <div class="filter-group">
@@ -61,15 +59,7 @@ permalink: /threat-graph/
 
       <div class="filter-group">
         <p class="panel-title">Accepted tag prefixes</p>
-        <div class="tag-prefix-list">
-          <span>APT:</span>
-          <span>E-Crime:</span>
-          <span>Ransomware:</span>
-          <span>Malware:</span>
-          <span>Actor:</span>
-          <span>Threat Actor:</span>
-          <span>Group:</span>
-        </div>
+        <div class="tag-prefix-list"><span>APT</span><span>E-Crime</span><span>Ransomware</span><span>Malware</span><span>Actor</span><span>Threat Actor</span><span>Group</span></div>
       </div>
 
       <div class="filter-group">
@@ -95,14 +85,7 @@ permalink: /threat-graph/
     </section>
 
     <section class="graph-details" id="graph-details">
-      <div class="detail-card">
-        <span class="node-type">Selected node</span>
-        <h2>Click a node</h2>
-        <p>
-          Select a tag-derived threat group, LOLESXi binary, procedure, ATT&amp;CK
-          technique, detection, or source to inspect relationships.
-        </p>
-      </div>
+      <div class="detail-card"><span class="node-type">Selected node</span><h2>Loading graph</h2><p>Loading data from the LOLESXi API.</p></div>
     </section>
   </main>
 </div>
