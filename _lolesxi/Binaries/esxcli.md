@@ -138,6 +138,25 @@ Commands:
     Privileges: Administrator
     MitreID:
     OperatingSystem: ESXi
+  - Command: esxcli system settings advanced set -o /User/execInstalledOnly -i 0
+    Description: Turns off the execInstalledOnly runtime option, which only lets the VMkernel run binaries from a signed, installed VIB. ESXi 8.0 added the option and enables it by default, and Broadcom documents this command for disabling it. On ESXi 7.x the command fails with "Unable to find option execInstalledOnly".
+    Usecase: An adversary may turn this off before running a ransomware binary that did not come from a VIB, such as an ELF payload uploaded to /tmp/.
+    Category: software operation
+    Privileges: Administrator
+    MitreID: T1685
+    OperatingSystem: ESXi
+    Tags:
+     - E-Crime: Qilin
+     - E-Crime: Babuk
+    ProceduralExamples:
+      - esxcli system settings advanced set -o /User/execInstalledOnly -i 0
+  - Command: esxcli system settings kernel set -s execInstalledOnly -v FALSE
+    Description: Sets the execInstalledOnly boot (kernel) option, available since ESXi 5.5, to FALSE. The change takes effect after the host reboots. If the TPM enforces the option, that has to be turned off first with esxcli system settings encryption set --require-exec-installed-only=False. Command is inferred based on vendor documentation, not available via CTI.
+    Usecase: An adversary may change the boot setting so that binaries that did not come from a VIB can run after the next reboot.
+    Category: software operation
+    Privileges: Administrator
+    MitreID: T1685
+    OperatingSystem: ESXi
   - Command: esxcli system syslog config set --logdir=/tmp
     Description:  Changes the syslog directory using esxcli. This is followed by the command esxcli system syslog reload
     Usecase: An adversary may change the default directory where syslog log files are written to evade detection.
@@ -224,6 +243,11 @@ Resources:
   - Link: https://research.checkpoint.com/2026/vect-ransomware-by-design-wiper-by-accident/
   - Link: https://research.checkpoint.com/2026/dfir-report-the-gentlemen/
   - Link: https://www.rapid7.com/blog/post/tr-kyber-ransomware-double-trouble-windows-esxi-attacks-explained/
+  - Link: https://www.seqrite.com/blog/the-evolution-of-qilin-agenda-a-comparative-reverse-engineering-analysis-of-qilin-agenda-ransomware-across-2026/
+  - Link: https://github.com/Ki4nb/VSphereRansomwareRecovery/blob/main/docs/analysis.md
+  - Link: https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-security/securing-esxi-hosts/deactivate-the-execinstalledonly-advanced-configuration-runtime-option.html
+  - Link: https://knowledge.broadcom.com/external/article/318467/vsphere-esxi-with-execinstalledonly-enab.html
+  - Link: https://cloud.google.com/blog/topics/threat-intelligence/defending-vsphere-from-unc3944
 Acknowledgement:
   - Person: Michael Dawson
   - Person: Junestherry Dela Cruz
@@ -263,4 +287,5 @@ Acknowledgement:
   - Person: Claudio Vozza
   - Person: Chetan Raghuprasad
   - Person: Michael Szeliga
+  - Person: Liran Ravich (Cribl)
 ---
