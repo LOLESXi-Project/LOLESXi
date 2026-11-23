@@ -25,12 +25,14 @@ Commands:
     MitreID: T1222.002
     OperatingSystem: ESXi
     Tags:
-     - E-Crime:  Nevada
+     - E-Crime: Nevada
      - E-Crime: Kraken
+     - E-Crime: BlackNevas
     ProceduralExamples:
      - /bin/chmod -w /var/spool/cron/crontabs/root
      - chmod +x $CLEAN_DIR/encrypt
-     - chmod +x ./encryptor[.]elf && ./encryptor[.]elf –path  -d -timeout 
+     - chmod +x ./encryptor[.]elf && ./encryptor[.]elf –path  -d -timeout
+     - chmod +x /tmp/esx64 
 Full_Path:
   - Path: /bin/chmod
   - Path: /sbin/chmod  
@@ -40,9 +42,12 @@ Resources:
   - Link: https://www.varonis.com/blog/vmware-esxi-in-the-line-of-ransomware-fire
   - Link: https://www.hybrid-analysis.com/sample/be5d2e94c2498ec052fb025e3348085e418c856dd43080501acfe2067ba54c41/6553b8f44c06e50d5408581f
   - Link: https://blog.talosintelligence.com/kraken-ransomware-group/
+  - Link: https://securelist.com/esxi-ransomware/121959/
 Acknowledgement:
   - Person: Michael Dawson
   - Person: Chetan Raghuprasad
   - Person: Michael Szeliga
+  - Person: Mohamed Ghobashy
+  - Person: Elsayed Elrefaei
 
 ---
