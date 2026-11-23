@@ -5,7 +5,7 @@ Created: 2026-11-23
 Commands:
   - Command: python vmfs_browser.py
     Description: Executes a Python script staged on the host.
-    Usecase: Mandiant observed ARMORY CASTLE use the script to enumerate VMFS contents, inspect guest disks and collect selected files.
+    Usecase: Use the script to enumerate VMFS contents, inspect guest disks and collect selected files.
     Category: Execute Script
     MitreID: T1059.006
     ProceduralExamples:
