@@ -25,7 +25,7 @@ E-Crime:
   The Gentlemen: 'The Gentlemen is a rapidly scaling ransomware-as-a-service group that leverages a lucrative affiliate model and multi-platform ransomware (including ESXi) to carry out fast, large-scale double-extortion attacks against enterprise targets worldwide.'
   INC: 'A RaaS group who emerged in 2023 and uses an affiliate model for engagement.'
   TAG-218: 'Insikt Group activity cluster associated with GhostFrame and overlapping with Settra ransomware operations.'
-  BlackNevas: 'Ransomware operation named in ransom notes recovered during the ESXi intrusion investigated by Kaspersky.  
+  BlackNevas: 'Ransomware operation named in ransom notes recovered during the ESXi intrusion investigated by Kaspersky.'
 APT: 
   UNC3886: 'A suspected Chinese threat actor who has used sophisticated and novel techniques during ESXi intrusions'
   Babuk: 'Aka Babyk is a Russian-speaking cybercrime operation and engages in Ransomware-as-a-Service (RaaS)' 
